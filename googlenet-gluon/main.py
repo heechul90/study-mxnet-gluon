@@ -7,6 +7,7 @@ from mxnet import gluon
 from mxnet import init
 import utils
 import gluoncv
+import mxnet as mx
 
 ## mxnet 有自己的实现
 ## mxnet/gluon/model_zoo/vision/inception.py
@@ -53,8 +54,9 @@ class GoogLeNet(nn.Block):
             b1 = nn.Sequential()
             b1.add(
                 nn.Conv2D(
-                    64, kernel_size=7, strides=2, padding=3,
-                    activation='relu'), nn.MaxPool2D(pool_size=3, strides=2))
+                    64, kernel_size=7, strides=2, padding=3, activation='relu'),
+                nn.MaxPool2D(pool_size=3, strides=2))
+
             # block 2
             b2 = nn.Sequential()
             b2.add(
@@ -104,12 +106,88 @@ class GoogLeNet(nn.Block):
 ####################################################################
 # train
 
-train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
+train_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
+test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
+
+train_data = gluon.data.DataLoader('../dataset/dogs-vs-cats/train', batch_size=64, shuffle=True)
+test_data = gluon.data.DataLoader('../dataset/dogs-vs-cats/test', batch_size=64, shuffle=True)
+
+
+from keras.preprocessing import image
+from glob import glob
+import cv2, os, random
+import numpy as np
+import matplotlib.pyplot as plt
+# from keras.models import Sequential
+# from keras.layers.convolutional import Conv2D, MaxPooling2D
+# from keras.layers.core import Dense, Flatten, Dropout
+# from keras.optimizers import Adam
+# from keras.utils import np_utils
+# from keras.callbacks import ModelCheckpoint
+
+path='dataset/dogs-vs-cats/train/'
+
+## used for resize and in our model
+ROW, COL = 96, 96
+
+dogs, cats = [], []
+y_dogs, y_cats = [], []
+
+
+dog_path = os.path.join(path, 'dog.*')
+len(glob(dog_path))
+
+## Load some our dog images (1,111 개 이미지)
+dog_path = os.path.join(path, 'dog.*')
+for dog_img in glob(dog_path):
+    dog = mx.image.imread(dog_img)
+    dog = cv2.cvtColor(dog, cv2.COLOR_BGR2GRAY)
+    dog = mx.image.resize(dog, (ROW, COL))
+    dog = image.img_to_array(dog)
+    dogs.append(dog)
+print('Some dog images starting with 5 loaded')
+
+
+## Definition to load some our cat images (1,111 개 이미지)
+cat_path = os.path.join(path, 'cat.*')
+for cat_img in glob(cat_path):
+    cat = cv2.imread(cat_img)
+    cat = cv2.cvtColor(cat, cv2.COLOR_BGR2GRAY)
+    cat = cv2.resize(cat, (ROW, COL))
+    cat = image.img_to_array(cat)
+    cats.append(cat)
+print('Some cat images starting with 5 loaded')
+
+classes = ['dog', 'cat']
+
+
+plt.figure(figsize=(12,8))
+for i in range(5):
+    plt.subplot(1, 5, i+1)
+    img = image.array_to_img(random.choice(dogs))
+    plt.imshow(img, cmap=plt.get_cmap('gray'))
+
+    plt.axis('off')
+    plt.title('It should be a {}.'.format(classes[0]))
+plt.show()
+
+
+plt.figure(figsize=(12,8))
+for i in range(5):
+    plt.subplot(1, 5, i+1)
+    img = image.array_to_img(random.choice(cats))
+    plt.imshow(img, cmap=plt.get_cmap('gray'))
+
+    plt.axis('off')
+    plt.title('It should be a {}.'.format(classes[1]))
+plt.show()
 
 ctx = utils.try_gpu()
 net = GoogLeNet(10)
 net.initialize(ctx=ctx, init=init.Xavier())
 
+
+#############################################
 gluoncv.utils.viz.plot_network(net)
 
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
