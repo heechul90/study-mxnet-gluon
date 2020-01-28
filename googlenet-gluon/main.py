@@ -9,6 +9,62 @@ import utils
 import gluoncv
 import mxnet as mx
 
+################################
+from keras.preprocessing import image
+from glob import glob
+import cv2, os, random
+import numpy as np
+import matplotlib.pyplot as plt
+# from keras.models import Sequential
+# from keras.layers.convolutional import Conv2D, MaxPooling2D
+# from keras.layers.core import Dense, Flatten, Dropout
+# from keras.optimizers import Adam
+# from keras.utils import np_utils
+# from keras.callbacks import ModelCheckpoint
+
+
+path = 'dataset/dogs-vs-cats/train/'
+## used for resize and in our model
+ROW, COL = 96, 96
+
+dogs, cats = [], []
+
+
+
+# dogs
+dog_path = os.path.join(path, 'dog.*')
+print(len(glob(dog_path)))
+
+for dog_img in glob(dog_path):
+    dog = mx.image.imread(dog_img)
+    dog = mx.image.imresize(dog, ROW, COL)
+    dog = dog.astype(np.float32)
+    dogs.append(dog)
+len(dogs)
+
+# cats
+cat_path = os.path.join(path, 'cat.*')
+print(len(glob(cat_path)))
+
+for cat_img in glob(cat_path):
+    cat = mx.image.imread(cat_img)
+    cat = mx.image.imresize(cat, ROW, COL)
+    cat = cat.astype(np.float32)
+    cat /= 255
+    cats.append(cat)
+len(cats)
+
+
+# label을 dog = 1, cat = 0
+y_dogs, y_cats = [], []
+y_dogs = [1 for item in enumerate(dogs)]
+y_cats = [1 for item in enumerate(cats)]
+
+# 정규화
+dogs = mx.ndarray.image.normalize(dogs)
+
+
+
 ## mxnet 有自己的实现
 ## mxnet/gluon/model_zoo/vision/inception.py
 
@@ -111,85 +167,6 @@ class GoogLeNet(nn.Block):
 #
 # train_data = gluon.data.DataLoader('../dataset/dogs-vs-cats/train', batch_size=64, shuffle=True)
 # test_data = gluon.data.DataLoader('../dataset/dogs-vs-cats/test', batch_size=64, shuffle=True)
-
-
-from keras.preprocessing import image
-from glob import glob
-import cv2, os, random
-import numpy as np
-import matplotlib.pyplot as plt
-# from keras.models import Sequential
-# from keras.layers.convolutional import Conv2D, MaxPooling2D
-# from keras.layers.core import Dense, Flatten, Dropout
-# from keras.optimizers import Adam
-# from keras.utils import np_utils
-# from keras.callbacks import ModelCheckpoint
-
-path='dataset/dogs-vs-cats/train/'
-
-## used for resize and in our model
-ROW, COL = 96, 96
-
-dogs, cats = [], []
-
-
-dog_path = os.path.join(path, 'dog.*')
-len(glob(dog_path))
-
-## Load some our dog images (12,500 개 이미지)
-dog_path = os.path.join(path, 'dog.*')
-for dog_img in glob(dog_path):
-    dog = mx.image.imread(dog_img)
-    dog = mx.image.imresize(dog, 96, 96)
-    dog = dog.astype(np.float32)
-    dogs.append(dog)
-print('Some dog images starting with 5 loaded')
-
-
-## Definition to load some our cat images (12,500 개 이미지)
-cat_path = os.path.join(path, 'cat.*')
-len(glob(cat_path))
-for cat_img in glob(dog_path):
-    cat = mx.image.imread(cat_img)
-    cat = mx.image.imresize(dog, 96, 96)
-    cat = cat.astype(np.float32)
-    cats.append(cat)
-print('Some dog images starting with 5 loaded')
-
-classes = ['dog', 'cat']
-
-
-plt.figure(figsize=(12,8))
-for i in range(5):
-    plt.subplot(1, 5, i+1)
-    img = image.array_to_img(random.choice(dogs))
-    plt.imshow(img, cmap=plt.get_cmap('gray'))
-
-    plt.axis('off')
-    plt.title('It should be a {}.'.format(classes[0]))
-plt.show()
-
-
-plt.figure(figsize=(12,8))
-for i in range(5):
-    plt.subplot(1, 5, i+1)
-    img = image.array_to_img(random.choice(cats))
-    plt.imshow(img, cmap=plt.get_cmap('gray'))
-
-    plt.axis('off')
-    plt.title('It should be a {}.'.format(classes[1]))
-plt.show()
-
-
-y_dogs, y_cats = [], []
-y_dogs = [1 for item in enumerate(dogs)]
-y_cats = [0 for item in enumerate(dogs)]
-
-dogs = np.asarray(dogs).astype('float32')
-cats = np.asarray(cats).astype('float32')
-y_dogs = np.asarray(y_dogs).astype('int32')
-y_cats = np.asarray(y_cats).astype('int32')
-
 
 
 
