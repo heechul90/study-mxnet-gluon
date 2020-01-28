@@ -36,9 +36,10 @@ dog_path = os.path.join(path, 'dog.*')
 print(len(glob(dog_path)))
 
 for dog_img in glob(dog_path):
-    dog = mx.image.imread(dog_img)
-    dog = mx.image.imresize(dog, ROW, COL)
-    dog = dog.astype(np.float32)
+    dog = cv2.imread(dog_img)
+    dog = cv2.cvtColor(dog, cv2.COLOR_BGR2GRAY)
+    dog = cv2.resize(dog, (ROW, COL))
+    dog = image.img_to_array(dog)
     dogs.append(dog)
 len(dogs)
 
@@ -47,10 +48,10 @@ cat_path = os.path.join(path, 'cat.*')
 print(len(glob(cat_path)))
 
 for cat_img in glob(cat_path):
-    cat = mx.image.imread(cat_img)
-    cat = mx.image.imresize(cat, ROW, COL)
-    cat = cat.astype(np.float32)
-    cat /= 255
+    cat = cv2.imread(cat_img)
+    cat = cv2.cvtColor(cat, cv2.COLOR_BGR2GRAY)
+    cat = cv2.resize(cat, (ROW, COL))
+    cat = image.img_to_array(cat)
     cats.append(cat)
 len(cats)
 
@@ -60,10 +61,24 @@ y_dogs, y_cats = [], []
 y_dogs = [1 for item in enumerate(dogs)]
 y_cats = [1 for item in enumerate(cats)]
 
+
+## converting everything to Numpy array to fit in our model
+## them creating a X and target file like we used to see
+## in Machine and Deep Learning models
+dogs = np.asarray(dogs).astype('float32')
+cats = np.asarray(cats).astype('float32')
+y_dogs = np.asarray(y_dogs).astype('int32')
+y_cats = np.asarray(y_cats).astype('int32')
+
+a = dogs[0:10]
+a = np.asarray(a).astype('float32')
+
 # 정규화
-dogs = mx.ndarray.image.normalize(dogs)
+dogs /= 255
+cats /= 255
 
 
+train_data = np.concatenate((dogs, cats), axis = 0)
 
 ## mxnet 有自己的实现
 ## mxnet/gluon/model_zoo/vision/inception.py
