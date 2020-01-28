@@ -1,84 +1,11 @@
 # GoogLeNet V1
 # @paper https://arxiv.org/abs/1409.4842
 
-from mxnet.gluon import HybridBlock, nn
+from mxnet.gluon import nn
 from mxnet import nd
 from mxnet import gluon
 from mxnet import init
 import utils
-import gluoncv
-import mxnet as mx
-
-################################
-from keras.preprocessing import image
-from glob import glob
-import cv2, os, random
-import numpy as np
-import matplotlib.pyplot as plt
-# from keras.models import Sequential
-# from keras.layers.convolutional import Conv2D, MaxPooling2D
-# from keras.layers.core import Dense, Flatten, Dropout
-# from keras.optimizers import Adam
-# from keras.utils import np_utils
-# from keras.callbacks import ModelCheckpoint
-
-
-path = 'dataset/dogs-vs-cats/train/'
-## used for resize and in our model
-ROW, COL = 96, 96
-
-dogs, cats = [], []
-
-
-
-# dogs
-dog_path = os.path.join(path, 'dog.*')
-print(len(glob(dog_path)))
-
-for dog_img in glob(dog_path):
-    dog = cv2.imread(dog_img)
-    dog = cv2.cvtColor(dog, cv2.COLOR_BGR2GRAY)
-    dog = cv2.resize(dog, (ROW, COL))
-    dog = image.img_to_array(dog)
-    dogs.append(dog)
-len(dogs)
-
-# cats
-cat_path = os.path.join(path, 'cat.*')
-print(len(glob(cat_path)))
-
-for cat_img in glob(cat_path):
-    cat = cv2.imread(cat_img)
-    cat = cv2.cvtColor(cat, cv2.COLOR_BGR2GRAY)
-    cat = cv2.resize(cat, (ROW, COL))
-    cat = image.img_to_array(cat)
-    cats.append(cat)
-len(cats)
-
-
-# label을 dog = 1, cat = 0
-y_dogs, y_cats = [], []
-y_dogs = [1 for item in enumerate(dogs)]
-y_cats = [1 for item in enumerate(cats)]
-
-
-## converting everything to Numpy array to fit in our model
-## them creating a X and target file like we used to see
-## in Machine and Deep Learning models
-dogs = np.asarray(dogs).astype('float32')
-cats = np.asarray(cats).astype('float32')
-y_dogs = np.asarray(y_dogs).astype('int32')
-y_cats = np.asarray(y_cats).astype('int32')
-
-a = dogs[0:10]
-a = np.asarray(a).astype('float32')
-
-# 정규화
-dogs /= 255
-cats /= 255
-
-
-train_data = np.concatenate((dogs, cats), axis = 0)
 
 ## mxnet 有自己的实现
 ## mxnet/gluon/model_zoo/vision/inception.py
@@ -125,9 +52,8 @@ class GoogLeNet(nn.Block):
             b1 = nn.Sequential()
             b1.add(
                 nn.Conv2D(
-                    64, kernel_size=7, strides=2, padding=3, activation='relu'),
-                nn.MaxPool2D(pool_size=3, strides=2))
-
+                    64, kernel_size=7, strides=2, padding=3,
+                    activation='relu'), nn.MaxPool2D(pool_size=3, strides=2))
             # block 2
             b2 = nn.Sequential()
             b2.add(
@@ -177,21 +103,11 @@ class GoogLeNet(nn.Block):
 ####################################################################
 # train
 
-# train_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
-# test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
-#
-# train_data = gluon.data.DataLoader('../dataset/dogs-vs-cats/train', batch_size=64, shuffle=True)
-# test_data = gluon.data.DataLoader('../dataset/dogs-vs-cats/test', batch_size=64, shuffle=True)
+train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
 
-
-
-
-###################################
 ctx = utils.try_gpu()
 net = GoogLeNet(10)
 net.initialize(ctx=ctx, init=init.Xavier())
-
-# gluoncv.utils.viz.plot_network(net)
 
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
