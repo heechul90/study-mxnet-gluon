@@ -1,11 +1,43 @@
 # GoogLeNet V1
 # @paper https://arxiv.org/abs/1409.4842
-
+from __future__ import print_function
 from mxnet.gluon import nn
-from mxnet import nd
+from mxnet import nd, autograd
 from mxnet import gluon
 from mxnet import init
+
+import mxnet as mx
 import utils
+
+
+##### 전처리 ########################
+import numpy as np
+def transformer(data, label):
+    data = mx.image.imresize(data, 96, 96)
+    data = mx.nd.transpose(data, (2, 0, 1))
+    data = data.astype(np.float32)
+    return data, label
+
+train_data = gluon.data.DataLoader('dataset/dogs-vs-cats/train/',
+    batch_size = 96, shuffle = False, last_batch = 'discard')
+transformer(train_data, 1)
+
+for d, l in train_data:
+    break
+
+#########################################################
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## mxnet 有自己的实现
 ## mxnet/gluon/model_zoo/vision/inception.py
@@ -104,6 +136,7 @@ class GoogLeNet(nn.Block):
 # train
 
 train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
+
 
 ctx = utils.try_gpu()
 net = GoogLeNet(10)
