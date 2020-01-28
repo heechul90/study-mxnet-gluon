@@ -106,11 +106,11 @@ class GoogLeNet(nn.Block):
 ####################################################################
 # train
 
-train_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
-test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
-
-train_data = gluon.data.DataLoader('../dataset/dogs-vs-cats/train', batch_size=64, shuffle=True)
-test_data = gluon.data.DataLoader('../dataset/dogs-vs-cats/test', batch_size=64, shuffle=True)
+# train_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
+# test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
+#
+# train_data = gluon.data.DataLoader('../dataset/dogs-vs-cats/train', batch_size=64, shuffle=True)
+# test_data = gluon.data.DataLoader('../dataset/dogs-vs-cats/test', batch_size=64, shuffle=True)
 
 
 from keras.preprocessing import image
@@ -131,32 +131,30 @@ path='dataset/dogs-vs-cats/train/'
 ROW, COL = 96, 96
 
 dogs, cats = [], []
-y_dogs, y_cats = [], []
 
 
 dog_path = os.path.join(path, 'dog.*')
 len(glob(dog_path))
 
-## Load some our dog images (1,111 개 이미지)
+## Load some our dog images (12,500 개 이미지)
 dog_path = os.path.join(path, 'dog.*')
 for dog_img in glob(dog_path):
     dog = mx.image.imread(dog_img)
-    dog = cv2.cvtColor(dog, cv2.COLOR_BGR2GRAY)
-    dog = mx.image.resize(dog, (ROW, COL))
-    dog = image.img_to_array(dog)
+    dog = mx.image.imresize(dog, 96, 96)
+    dog = dog.astype(np.float32)
     dogs.append(dog)
 print('Some dog images starting with 5 loaded')
 
 
-## Definition to load some our cat images (1,111 개 이미지)
+## Definition to load some our cat images (12,500 개 이미지)
 cat_path = os.path.join(path, 'cat.*')
-for cat_img in glob(cat_path):
-    cat = cv2.imread(cat_img)
-    cat = cv2.cvtColor(cat, cv2.COLOR_BGR2GRAY)
-    cat = cv2.resize(cat, (ROW, COL))
-    cat = image.img_to_array(cat)
+len(glob(cat_path))
+for cat_img in glob(dog_path):
+    cat = mx.image.imread(cat_img)
+    cat = mx.image.imresize(dog, 96, 96)
+    cat = cat.astype(np.float32)
     cats.append(cat)
-print('Some cat images starting with 5 loaded')
+print('Some dog images starting with 5 loaded')
 
 classes = ['dog', 'cat']
 
@@ -182,13 +180,26 @@ for i in range(5):
     plt.title('It should be a {}.'.format(classes[1]))
 plt.show()
 
+
+y_dogs, y_cats = [], []
+y_dogs = [1 for item in enumerate(dogs)]
+y_cats = [0 for item in enumerate(dogs)]
+
+dogs = np.asarray(dogs).astype('float32')
+cats = np.asarray(cats).astype('float32')
+y_dogs = np.asarray(y_dogs).astype('int32')
+y_cats = np.asarray(y_cats).astype('int32')
+
+
+
+
+
+###################################
 ctx = utils.try_gpu()
 net = GoogLeNet(10)
 net.initialize(ctx=ctx, init=init.Xavier())
 
-
-#############################################
-gluoncv.utils.viz.plot_network(net)
+# gluoncv.utils.viz.plot_network(net)
 
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
