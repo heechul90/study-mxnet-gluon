@@ -11,18 +11,12 @@ import mxnet as mx
 import utils
 import numpy as np
 import os
+import matplotlib.pyplot as plt
 mx.random.seed(1)
 
 
-##### 전처리 ########################
-
-def transform(data, label):
-    data = mx.image.imresize(data, ROW, COL)
-    data = mx.nd.transpose(data.astype('float32'), (2, 0, 1)) / 255
-    label = label.astype('float32')
-    data = data.astype(np.float32)
-    return data, label
-
+##### 전처리 ##############################################
+##### dogs #########################
 path = 'D:/HeechulFromGithub/dataset/dogs-vs-cats/train/'
 ROW, COL = 96, 96
 dogs = []
@@ -30,8 +24,24 @@ dog_path = os.path.join(path, 'dog.*')
 for dog_img in glob(dog_path):
     dog = mx.image.imread(dog_img)
     dog = mx.image.imresize(dog, ROW, COL)
+    dog = mx.nd.transpose(dog.astype('float32'), (2, 0, 1)) / 255
     dogs.append(dog)
 dogs
+y_dogs = [1 for item in enumerate(dogs)]
+
+##### cats #########################
+path = 'D:/HeechulFromGithub/dataset/dogs-vs-cats/train/'
+ROW, COL = 96, 96
+cats = []
+cat_path = os.path.join(path, 'cat.*')
+for cat_img in glob(cat_path):
+    cat = mx.image.imread(cat_img)
+    cat = mx.image.imresize(cat, ROW, COL)
+    cat = mx.nd.transpose(cat.astype('float32'), (2, 0, 1)) / 255
+    dogs.append(cat)
+cats
+y_cats = [1 for item in enumerate(cats)]
+
 
 
 
