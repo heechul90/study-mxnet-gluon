@@ -5,25 +5,49 @@ from mxnet.gluon import nn
 from mxnet import nd, autograd
 from mxnet import gluon
 from mxnet import init
+from glob import glob
 
 import mxnet as mx
 import utils
+import numpy as np
+import os
+mx.random.seed(1)
 
 
 ##### 전처리 ########################
-import numpy as np
-def transformer(data, label):
-    data = mx.image.imresize(data, 96, 96)
-    data = mx.nd.transpose(data, (2, 0, 1))
+
+def transform(data, label):
+    data = mx.image.imresize(data, ROW, COL)
+    data = mx.nd.transpose(data.astype('float32'), (2, 0, 1)) / 255
+    label = label.astype('float32')
     data = data.astype(np.float32)
     return data, label
 
-train_data = gluon.data.DataLoader('dataset/dogs-vs-cats/train/',
-    batch_size = 96, shuffle = False, last_batch = 'discard')
-transformer(train_data, 1)
+path = 'D:/HeechulFromGithub/dataset/dogs-vs-cats/train/'
+ROW, COL = 96, 96
+dogs = []
+dog_path = os.path.join(path, 'dog.*')
+for dog_img in glob(dog_path):
+    dog = mx.image.imread(dog_img)
+    dog = mx.image.imresize(dog, ROW, COL)
+    dogs.append(dog)
+dogs
 
-for d, l in train_data:
-    break
+
+
+
+
+batch_size = 64
+dogs_train = gluon.data.DataLoader(
+    gluon.data.vision.ImageFolderDataset()
+    batch_size = batch_size, shuffle = False, last_batch = 'discard')
+# data (NDArray) – Source input
+# axes (Shape(tuple), optional, default=[]) – Target axis order. By default the axes will be inverted.
+# out (NDArray, optional) – The output NDArray to hold the result.
+
+
+
+
 
 #########################################################
 
