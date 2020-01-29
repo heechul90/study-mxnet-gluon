@@ -6,77 +6,103 @@ from mxnet import nd, autograd
 from mxnet import gluon
 from mxnet import init
 from glob import glob
+from keras.preprocessing import image
 
 import mxnet as mx
 import utils
 import numpy as np
-import os
+import cv2, os, random
 import matplotlib.pyplot as plt
 mx.random.seed(1)
 
 
 ##### 전처리 ##############################################
 ##### dogs #########################
+# path = 'D:/HeechulFromGithub/dataset/dogs-vs-cats/train/'
+# ROW, COL = 96, 96
+# dogs = []
+# dog_path = os.path.join(path, 'dog.*')
+# for dog_img in glob(dog_path):
+#     dog = mx.image.imread(dog_img)
+#     dog = mx.image.imresize(dog, ROW, COL)
+#     dog = mx.nd.transpose(dog.astype('float32'), (2, 0, 1)) / 255
+#     dogs.append(dog)
+#
+# y_dogs = [1 for item in enumerate(dogs)]
+# y_dogs = mx.nd.array(y_dogs)
+#
+# ##### cats #########################
+# path = 'D:/HeechulFromGithub/dataset/dogs-vs-cats/train/'
+# ROW, COL = 96, 96
+# cats = []
+# cat_path = os.path.join(path, 'cat.*')
+# for cat_img in glob(cat_path):
+#     cat = mx.image.imread(cat_img)
+#     cat = mx.image.imresize(cat, ROW, COL)
+#     cat = mx.nd.transpose(cat.astype('float32'), (2, 0, 1)) / 255
+#     cats.append(cat)
+# y_cats = [0 for item in enumerate(cats)]
+# y_cats = mx.nd.array(y_cats)
+#
+# mx.nd.concatenate((dogs, cats), axis = 0)
+
+
+################## train #########################
 path = 'D:/HeechulFromGithub/dataset/dogs-vs-cats/train/'
 ROW, COL = 96, 96
 dogs = []
 dog_path = os.path.join(path, 'dog.*')
 for dog_img in glob(dog_path):
-    dog = mx.image.imread(dog_img)
-    dog = mx.image.imresize(dog, ROW, COL)
-    dog = mx.nd.transpose(dog.astype('float32'), (2, 0, 1)) / 255
+    dog = cv2.imread(dog_img)
+    dog = cv2.cvtColor(dog, cv2.COLOR_BGR2GRAY)
+    dog = cv2.resize(dog, (ROW, COL))
+    dog = image.img_to_array(dog) / 255
     dogs.append(dog)
-
+print('Some dog images starting with 5 loaded')
 y_dogs = [1 for item in enumerate(dogs)]
-y_dogs = mx.nd.array(y_dogs)
 
-##### cats #########################
+
 path = 'D:/HeechulFromGithub/dataset/dogs-vs-cats/train/'
 ROW, COL = 96, 96
 cats = []
 cat_path = os.path.join(path, 'cat.*')
 for cat_img in glob(cat_path):
-    cat = mx.image.imread(cat_img)
-    cat = mx.image.imresize(cat, ROW, COL)
-    cat = mx.nd.transpose(cat.astype('float32'), (2, 0, 1)) / 255
-    cats.append(cat)
-y_cats = [0 for item in enumerate(cats)]
-y_cats = mx.nd.array(y_cats)
+    cat = cv2.imread(cat_img)
+    cat = cv2.cvtColor(cat, cv2.COLOR_BGR2GRAY)
+    cat = cv2.resize(cat, (ROW, COL))
+    cat = image.img_to_array(cat) / 255
+    cats.append(dog)
+print('Some cat images starting with 5 loaded')
+y_cats = [1 for item in enumerate(cats)]
 
-
-
-mx.nd.concatenate(a, axis = 0)
-X = np.concatenate((a,b), axis=0)
-
-
-
-
+X = np.concatenate((dogs, cats), axis = 0)
+y = np.concatenate((y_dogs, y_cats), axis = 0)
+len(X)
+len(y)
+X = mx.nd.array(X)
+y = mx.nd.array(y)
 
 batch_size = 64
-dogs_train = gluon.data.DataLoader(
-    gluon.data.vision.ImageFolderDataset()
-    batch_size = batch_size, shuffle = False, last_batch = 'discard')
+train_data = mx.io.NDArrayIter(X, y, batch_size, shuffle=True)
+
+###########################################
+################## test #########################
+path = 'D:/HeechulFromGithub/dataset/dogs-vs-cats/train/'
+ROW, COL = 96, 96
+test = []
+test_path = os.path.join(path, '*')
+for test_img in glob(test_path):
+    t = cv2.imread(test_img)
+    t = cv2.resize(t, (ROW, COL))
+    t = image.img_to_array(t) / 255
+    cats.append(t)
+print('Some test images starting with 5 loaded')
+
+
+
 # data (NDArray) – Source input
 # axes (Shape(tuple), optional, default=[]) – Target axis order. By default the axes will be inverted.
 # out (NDArray, optional) – The output NDArray to hold the result.
-
-
-
-
-
-#########################################################
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## mxnet 有自己的实现
 ## mxnet/gluon/model_zoo/vision/inception.py
@@ -173,14 +199,46 @@ class GoogLeNet(nn.Block):
 
 ####################################################################
 # train
+# train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
+#
+# ctx = utils.try_gpu()
+# net = GoogLeNet(10)
+# net.initialize(ctx=ctx, init=init.Xavier())
+#
+# loss = gluon.loss.SoftmaxCrossEntropyLoss()
+# trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
+# utils.train(train_data, test_data, net, loss, trainer, ctx, num_epochs=1)
 
-train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
 
-
-ctx = utils.try_gpu()
+####################################################
+# 표준편차가 0.05인 정규 분포에서 모델의 파라미터 전체에 대해
 net = GoogLeNet(10)
-net.initialize(ctx=ctx, init=init.Xavier())
 
-loss = gluon.loss.SoftmaxCrossEntropyLoss()
-trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
-utils.train(train_data, test_data, net, loss, trainer, ctx, num_epochs=1)
+# 임의 값으로 시작
+net.collect_params().initialize(mx.init.Normal(sigma=0.05))
+
+# softmax cross entropy loss 함수를 사용하여 # 모델이 정답을 얼마나 잘 예측할 수 있는지 평가하도록 선택
+loss = gluon.loss.SigmoidBinaryCrossEntropyLoss()
+
+# SGD(Stochastic Gradient Descent) 학습 알고리즘을 사용하고
+# 학습 속도 하이퍼파라미터를 .1로 설정하도록 선택
+trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
+
+
+epochs = 10
+for e in range(epochs):
+    for i, batch in enumerate(train_data):
+        data = batch.data[0]
+        label = batch.label[0]
+        with autograd.record(): # 파생물 기록 시작
+            output = net(data) # 순방향 반복
+            loss = loss(output, label)
+            loss.backward()
+        trainer.step(data.shape[0])
+
+
+acc = mx.metric.Accuracy()# 정확성 지표 초기화
+output = net(test_data_mx) # 신경망을 통해 테스트 데이터 실행
+predictions = ndarray.argmax(output, axis=1) # 테스트 데이터 예측
+acc.update(preds=predictions, labels=test_label_mx) # 정확성 계산
+print(acc)
