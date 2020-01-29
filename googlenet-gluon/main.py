@@ -26,7 +26,9 @@ for dog_img in glob(dog_path):
     dog = mx.image.imresize(dog, ROW, COL)
     dog = mx.nd.transpose(dog.astype('float32'), (2, 0, 1)) / 255
     dogs.append(dog)
+
 y_dogs = [1 for item in enumerate(dogs)]
+y_dogs = mx.nd.array(y_dogs)
 
 ##### cats #########################
 path = 'D:/HeechulFromGithub/dataset/dogs-vs-cats/train/'
@@ -39,11 +41,13 @@ for cat_img in glob(cat_path):
     cat = mx.nd.transpose(cat.astype('float32'), (2, 0, 1)) / 255
     cats.append(cat)
 y_cats = [0 for item in enumerate(cats)]
+y_cats = mx.nd.array(y_cats)
 
-X = np.concatenate((dogs, cats), axis = 0)
-y = np.concatenate((y_dogs, y_cats), axis = 0)
-len(X)
-len(y)
+
+
+mx.nd.concatenate(a, axis = 0)
+X = np.concatenate((a,b), axis=0)
+
 
 
 
