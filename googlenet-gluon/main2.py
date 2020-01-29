@@ -1,12 +1,33 @@
 # GoogLeNet V1
 # @paper https://arxiv.org/abs/1409.4842
 
+from __future__ import print_function
 from mxnet.gluon import nn
-from mxnet import nd
+from mxnet import nd, autograd
 from mxnet import gluon
 from mxnet import init
+
 import utils
-from mxnet.gluon.block import HybridBlock
+import mxnet as mx
+import numpy as np
+mx.random.seed(1)
+##### 전처리 ##############################################
+ctx = mx.cpu()
+
+def transformer(data, label):
+    data = mx.image.imresize(data, 96, 96)
+    data = mx.nd.transpose(data, (2, 0, 1))
+    data = data.astype(np.float32)
+    return data, label
+
+batch_size = 64
+train_data = gluon.data.DataLoader(
+    gluon.data.vision.MNIST('dataset/data', train = True, transform = transformer),
+    batch_size = batch_size, shuffle = False, last_batch = 'discard')
+
+test_data = gluon.data.DataLoader(
+    gluon.data.vision.MNIST('dataset/data', train = False, transform = transformer),
+    batch_size = batch_size, shuffle = True, last_batch = 'discard')
 
 ## mxnet 有自己的实现
 ## mxnet/gluon/model_zoo/vision/inception.py
@@ -51,46 +72,46 @@ class GoogLeNet(nn.HybridBlock):
         # add name_scope on the outer most Sequential
         with self.name_scope():
             # block 1
-            b1 = gluon.nn.HybridSequential(prefix='')
+            b1 = nn.HybridSequential()
             b1.add(
-                gluon.nn.Conv2D(
+                nn.Conv2D(
                     64, kernel_size=7, strides=2, padding=3,
-                    activation='relu'), gluon.nn.MaxPool2D(pool_size=3, strides=2))
+                    activation='relu'), nn.MaxPool2D(pool_size=3, strides=2))
             # block 2
-            b2 = gluon.nn.HybridSequential(prefix='')
+            b2 = nn.HybridSequential()
             b2.add(
-                gluon.nn.Conv2D(64, kernel_size=1),
-                gluon.nn.Conv2D(192, kernel_size=3, padding=1),
-                gluon.nn.MaxPool2D(pool_size=3, strides=2))
+                nn.Conv2D(64, kernel_size=1),
+                nn.Conv2D(192, kernel_size=3, padding=1),
+                nn.MaxPool2D(pool_size=3, strides=2))
 
             # block 3
-            b3 = gluon.nn.HybridSequential(prefix='')
+            b3 = nn.HybridSequential()
             b3.add(
                 Inception(64, 96, 128, 16, 32, 32),
                 Inception(128, 128, 192, 32, 96, 64),
                 nn.MaxPool2D(pool_size=3, strides=2))
 
             # block 4
-            b4 = gluon.nn.HybridSequential()
+            b4 = nn.HybridSequential()
             b4.add(
                 Inception(192, 96, 208, 16, 48, 64),
                 Inception(160, 112, 224, 24, 64, 64),
                 Inception(128, 128, 256, 24, 64, 64),
                 Inception(112, 144, 288, 32, 64, 64),
                 Inception(256, 160, 320, 32, 128, 128),
-                gluon.nn.MaxPool2D(pool_size=3, strides=2))
+                nn.MaxPool2D(pool_size=3, strides=2))
 
             # block 5
-            b5 = gluon.nn.HybridSequential()
+            b5 = nn.HybridSequential()
             b5.add(
                 Inception(256, 160, 320, 32, 128, 128),
                 Inception(384, 192, 384, 48, 128, 128),
-                gluon.nn.AvgPool2D(pool_size=2))
+                nn.AvgPool2D(pool_size=2))
             # block 6
-            b6 = gluon.nn.HybridSequential()
-            b6.add(gluon.nn.Flatten(), gluon.nn.Dense(num_classes))
+            b6 = nn.HybridSequential()
+            b6.add(nn.Flatten(), nn.Dense(num_classes))
             # chain blocks together
-            self.net = gluon.nn.HybridSequential()
+            self.net = nn.HybridSequential()
             self.net.add(b1, b2, b3, b4, b5, b6)
 
     def forward(self, x):
@@ -98,24 +119,54 @@ class GoogLeNet(nn.HybridBlock):
         for i, b in enumerate(self.net):
             out = b(out)
             if self.verbose:
-                print('HybridBlock %d output: %s' % (i + 1, out.shape))
+                print('Block %d output: %s' % (i + 1, out.shape))
         return out
+
 
 
 ####################################################################
 # train
 
-train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
-
-ctx = utils.try_gpu()
 net = GoogLeNet(10)
-net.initialize(ctx=ctx, init=init.Xavier())
+
+net.collect_params().initialize(mx.init.Normal(sigma = 0.05), ctx = ctx)
+
+trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': 0.001})
+# 오차 함수
+softmax_cross_entropy  = gluon.loss.SoftmaxCrossEntropyLoss()
+
+def evaluate_accuracy(data_iterator, net):
+    acc = mx.metric.Accuracy()
+    for d, l in data_iterator:
+        data = d.as_in_context(ctx)
+        label = l.as_in_context(ctx)
+        output = net(data)
+        predictions = nd.argmax(output, axis = 1)
+        acc.update(preds = predictions, labels = label)
+    return acc.get()
 
 
-###### 그래프 #####
-import gluoncv
-gluoncv.utils.viz.plot_network(net)
+####### train ######
+epochs = 5
+smoothing_constant = 0.01
 
-loss = gluon.loss.SoftmaxCrossEntropyLoss()
-trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
-utils.train(train_data, test_data, net, loss, trainer, ctx, num_epochs=1)
+for e in range(epochs):
+    for i, (d, l) in enumerate(train_data):
+        data = d.as_in_context(ctx)
+        label = l.as_in_context(ctx)
+        with autograd.record():
+            output = net(data)
+            loss = softmax_cross_entropy(output, label)
+        loss.backward()
+        trainer.step(data.shape[0])
+
+        ############
+        # keep a moving average of the losses
+        ############
+
+        curr_loss = nd.mean(loss).asscalar()
+        moving_loss = (curr_loss if ((i == 0) and (e == 0)) else (1 - smoothing_constant) * moving_loss + (smoothing_constant) * curr_loss)
+
+    test_accuracy = evaluate_accuracy(test_data, net)
+    train_accuracy = evaluate_accuracy(train_data, net)
+    print("Epoch %s. Loss: %s, Train_acc %s, Test_acc %s" % (e, moving_loss, train_accuracy, test_accuracy))
