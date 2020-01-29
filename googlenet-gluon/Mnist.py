@@ -45,6 +45,7 @@ label.shape
 # 输出的体积由下面的公式算出：
 # out_height = floor((height+2*padding[0]-dilation[0]*(kernel_size[0]-1)-1)/stride[0])+1
 # out_width = floor((width+2*padding[1]-dilation[1]*(kernel_size[1]-1)-1)/stride[1])+1
+
 class Inception(nn.Block):
     def __init__(self, n1_1, n2_1, n2_3, n3_1, n3_5, n4_1, **kwargs):
         super(Inception, self).__init__(**kwargs)
@@ -178,19 +179,3 @@ for e in range(epochs):
     print("Epoch %s. Loss: %s, Train_acc %s, Test_acc %s" % (e, moving_loss, train_accuracy, test_accuracy))
 
 
-
-
-
-
-
-
-
-train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
-
-ctx = utils.try_gpu()
-net = GoogLeNet(10)
-net.initialize(ctx=ctx, init=init.Xavier())
-
-loss = gluon.loss.SoftmaxCrossEntropyLoss()
-trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
-utils.train(train_data, test_data, net, loss, trainer, ctx, num_epochs=1)
