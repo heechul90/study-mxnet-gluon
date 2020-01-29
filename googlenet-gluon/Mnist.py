@@ -1,11 +1,40 @@
 # GoogLeNet V1
 # @paper https://arxiv.org/abs/1409.4842
 
+from __future__ import print_function
 from mxnet.gluon import nn
-from mxnet import nd
+from mxnet import nd, autograd
 from mxnet import gluon
 from mxnet import init
+
 import utils
+import mxnet as mx
+import numpy as np
+mx.random.seed(1)
+##### 전처리 ##############################################
+ctx = mx.cpu()
+
+def transformer(data, label):
+    data = mx.image.imresize(data, 96, 96)
+    data = mx.nd.transpose(data, (2, 0, 1))
+    data = data.astype(np.float32)
+    return data, label
+
+batch_size = 64
+train_data = gluon.data.DataLoader(
+    gluon.data.vision.CIFAR10('dataset/data', train = True, transform = transformer),
+    batch_size = batch_size, shuffle = False, last_batch = 'discard')
+
+test_data = gluon.data.DataLoader(
+    gluon.data.vision.CIFAR10('dataset/data', train = False, transform = transformer),
+    batch_size = batch_size, shuffle = True, last_batch = 'discard')
+
+for data, label in train_data:
+    break
+
+data.shape
+label.shape
+
 
 ## mxnet 有自己的实现
 ## mxnet/gluon/model_zoo/vision/inception.py
@@ -101,7 +130,60 @@ class GoogLeNet(nn.Block):
 
 
 ####################################################################
+net = GoogLeNet(10)
+
+net.collect_params().initialize(mx.init.Xavier(magnitude = 0), ctx = ctx)
+
+trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
+# 오차 함수
+loss = gluon.loss.SoftmaxCrossEntropyLoss()
+
+def evaluate_accuracy(data_iterator, net):
+    acc = mx.metric.Accuracy()
+    for d, l in data_iterator:
+        data = d.as_in_context(ctx)
+        label = l.as_in_context(ctx)
+        output = net(data)
+        predictions = nd.argmax(output, axis = 1)
+        acc.update(preds = predictions, labels = label)
+    return acc.get()
+
+
+#######
 # train
+#######
+
+epochs = 1
+smoothing_constant = 0.01
+
+for e in range(epochs):
+    for i, (d, l) in enumerate(train_data):
+        data = d.as_in_context(ctx)
+        label = l.as_in_context(ctx)
+        with autograd.record():
+            output = net(data)
+            loss = loss(output, label)
+        loss.backward()
+        trainer.step(data.shape[0])
+
+        ############
+        # keep a moving average of the losses
+        ############
+
+        curr_loss = nd.mean(loss).asscalar()
+        moving_loss = (curr_loss if ((i == 0) and (e == 0)) else (1 - smoothing_constant) * moving_loss + (smoothing_constant) * curr_loss)
+
+    test_accuracy = evaluate_accuracy(test_data, net)
+    train_accuracy = evaluate_accuracy(train_data, net)
+    print("Epoch %s. Loss: %s, Train_acc %s, Test_acc %s" % (e, moving_loss, train_accuracy, test_accuracy))
+
+
+
+
+
+
+
+
 
 train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
 
