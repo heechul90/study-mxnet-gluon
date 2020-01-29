@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb36b0b4-b024-4ca8-b9cc-eb3f18b91b00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/googlenet-gluon/DogsnCats.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/googlenet-gluon/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/googlenet-gluon/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/googlenet-gluon/Mnist.py" beforeDir="false" afterPath="$PROJECT_DIR$/googlenet-gluon/Mnist.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,19 +16,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/googlenet-gluon/DogsnCats.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+            <state relative-caret-position="99">
+              <caret line="18" column="56" selection-start-line="18" selection-end-line="18" selection-end-column="56" />
+              <folding>
+                <element signature="e#56#93#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/googlenet-gluon/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3531">
+              <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+              <folding>
+                <element signature="e#57#83#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/googlenet-gluon/main.py">
+        <entry file="file://$PROJECT_DIR$/googlenet-gluon/Mnist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3531">
-              <caret line="107" column="21" lean-forward="true" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+            <state relative-caret-position="352">
+              <caret line="178" lean-forward="true" selection-start-line="154" selection-end-line="178" />
               <folding>
-                <element signature="e#57#83#0" expanded="true" />
+                <element signature="e#56#93#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,6 +65,7 @@
       <list>
         <option value="$PROJECT_DIR$/alexnet-gluon/main.py" />
         <option value="$PROJECT_DIR$/googlenet-gluon/main.py" />
+        <option value="$PROJECT_DIR$/googlenet-gluon/Mnist.py" />
       </list>
     </option>
   </component>
@@ -188,14 +203,27 @@
       <option name="project" value="LOCAL" />
       <updated>1580266861578</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="GoogLeNet with mxnet.gluon for deeplearning">
+      <created>1580267190024</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1580267190024</updated>
+    </task>
+    <task id="LOCAL-00012" summary="GoogLeNet with mxnet.gluon for deeplearning">
+      <created>1580272542878</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1580272542878</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2473573" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2473573" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -208,7 +236,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.3507795" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.4621381" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -272,17 +300,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/googlenet-gluon/DogsnCats.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="99">
+          <caret line="18" column="56" selection-start-line="18" selection-end-line="18" selection-end-column="56" />
+          <folding>
+            <element signature="e#56#93#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/googlenet-gluon/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3531">
-          <caret line="107" column="21" lean-forward="true" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+          <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
           <folding>
             <element signature="e#57#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/googlenet-gluon/Mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="178" lean-forward="true" selection-start-line="154" selection-end-line="178" />
+          <folding>
+            <element signature="e#56#93#0" expanded="true" />
           </folding>
         </state>
       </provider>

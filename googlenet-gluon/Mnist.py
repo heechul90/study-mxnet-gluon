@@ -22,11 +22,11 @@ def transformer(data, label):
 
 batch_size = 64
 train_data = gluon.data.DataLoader(
-    gluon.data.vision.CIFAR10('dataset/data', train = True, transform = transformer),
+    gluon.data.vision.MNIST('dataset/data', train = True, transform = transformer),
     batch_size = batch_size, shuffle = False, last_batch = 'discard')
 
 test_data = gluon.data.DataLoader(
-    gluon.data.vision.CIFAR10('dataset/data', train = False, transform = transformer),
+    gluon.data.vision.MNIST('dataset/data', train = False, transform = transformer),
     batch_size = batch_size, shuffle = True, last_batch = 'discard')
 
 for data, label in train_data:
@@ -136,7 +136,7 @@ net.collect_params().initialize(mx.init.Xavier(magnitude = 0), ctx = ctx)
 
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
 # 오차 함수
-loss = gluon.loss.SoftmaxCrossEntropyLoss()
+softmax_cross_entropy  = gluon.loss.SoftmaxCrossEntropyLoss()
 
 def evaluate_accuracy(data_iterator, net):
     acc = mx.metric.Accuracy()
@@ -162,7 +162,7 @@ for e in range(epochs):
         label = l.as_in_context(ctx)
         with autograd.record():
             output = net(data)
-            loss = loss(output, label)
+            loss = softmax_cross_entropy(output, label)
         loss.backward()
         trainer.step(data.shape[0])
 
