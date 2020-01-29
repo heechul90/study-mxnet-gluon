@@ -26,7 +26,6 @@ for dog_img in glob(dog_path):
     dog = mx.image.imresize(dog, ROW, COL)
     dog = mx.nd.transpose(dog.astype('float32'), (2, 0, 1)) / 255
     dogs.append(dog)
-dogs
 y_dogs = [1 for item in enumerate(dogs)]
 
 ##### cats #########################
@@ -38,11 +37,13 @@ for cat_img in glob(cat_path):
     cat = mx.image.imread(cat_img)
     cat = mx.image.imresize(cat, ROW, COL)
     cat = mx.nd.transpose(cat.astype('float32'), (2, 0, 1)) / 255
-    dogs.append(cat)
-cats
-y_cats = [1 for item in enumerate(cats)]
+    cats.append(cat)
+y_cats = [0 for item in enumerate(cats)]
 
-
+X = np.concatenate((dogs, cats), axis = 0)
+y = np.concatenate((y_dogs, y_cats), axis = 0)
+len(X)
+len(y)
 
 
 
