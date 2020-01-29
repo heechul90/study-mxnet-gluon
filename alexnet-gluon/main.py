@@ -1,15 +1,14 @@
 # AlexNet
 # @paper https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
 
-from mxnet.gluon import HybridBlock, nn
+from mxnet.gluon import nn
 from mxnet import init
 from mxnet import gluon
 import utils
-import gluoncv
-nn.__file__
+
 
 ctx = utils.try_gpu()
-mxnet.gluon.nn.HybridBlock
+
 net = nn.Sequential()
 with net.name_scope():
     net.add(
@@ -34,14 +33,10 @@ with net.name_scope():
         # 第六阶段
         nn.Dense(10))
 
-
 train_data, test_data = utils.load_data_fashion_mnist(
     batch_size=64, resize=224)
 
 net.initialize(ctx=ctx, init=init.Xavier())
-
-gluoncv.utils.viz.plot_network(net)
-
 
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
