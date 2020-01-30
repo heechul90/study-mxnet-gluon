@@ -46,12 +46,10 @@ class Inception(nn.HybridBlock):
         self.p1_conv_1 = nn.Conv2D(n1_1, kernel_size=1, activation='relu')
         # path 2
         self.p2_conv_1 = nn.Conv2D(n2_1, kernel_size=1, activation='relu')
-        self.p2_conv_3 = nn.Conv2D(
-            n2_3, kernel_size=3, padding=1, activation='relu')
+        self.p2_conv_3 = nn.Conv2D(n2_3, kernel_size=3, padding=1, activation='relu')
         # path 3
         self.p3_conv_1 = nn.Conv2D(n3_1, kernel_size=1, activation='relu')
-        self.p3_conv_5 = nn.Conv2D(
-            n3_5, kernel_size=5, padding=2, activation='relu')
+        self.p3_conv_5 = nn.Conv2D(n3_5, kernel_size=5, padding=2, activation='relu')
         # path 4
         self.p4_pool_3 = nn.MaxPool2D(pool_size=3, padding=1, strides=1)
         self.p4_conv_1 = nn.Conv2D(n4_1, kernel_size=1, activation='relu')
@@ -74,9 +72,9 @@ class GoogLeNet(nn.HybridBlock):
             # block 1
             b1 = nn.HybridSequential()
             b1.add(
-                nn.Conv2D(
-                    64, kernel_size=7, strides=2, padding=3,
-                    activation='relu'), nn.MaxPool2D(pool_size=3, strides=2))
+                nn.Conv2D(64, kernel_size=7, strides=2, padding=3, activation='relu'),
+                nn.MaxPool2D(pool_size=3, strides=2))
+
             # block 2
             b2 = nn.HybridSequential()
             b2.add(
@@ -107,9 +105,13 @@ class GoogLeNet(nn.HybridBlock):
                 Inception(256, 160, 320, 32, 128, 128),
                 Inception(384, 192, 384, 48, 128, 128),
                 nn.AvgPool2D(pool_size=2))
+
             # block 6
             b6 = nn.HybridSequential()
-            b6.add(nn.Flatten(), nn.Dense(num_classes))
+            b6.add(
+                nn.Flatten(),
+                nn.Dense(num_classes))
+
             # chain blocks together
             self.net = nn.HybridSequential()
             self.net.add(b1, b2, b3, b4, b5, b6)
@@ -132,6 +134,10 @@ net = GoogLeNet(10)
 net.collect_params().initialize(mx.init.Normal(sigma = 0.05), ctx = ctx)
 
 trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': 0.001})
+
+
+
+
 # 오차 함수
 softmax_cross_entropy  = gluon.loss.SoftmaxCrossEntropyLoss()
 
