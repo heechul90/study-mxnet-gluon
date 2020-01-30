@@ -10,6 +10,7 @@ from mxnet import init
 import utils
 import mxnet as mx
 import numpy as np
+import gluoncv
 mx.random.seed(1)
 ##### 전처리 ##############################################
 ctx = mx.cpu()
@@ -129,12 +130,15 @@ class GoogLeNet(nn.HybridBlock):
 ####################################################################
 # train
 
-net = GoogLeNet(10)
+net = GoogLeNet(10, verbose=False)
 
 net.collect_params().initialize(mx.init.Normal(sigma = 0.05), ctx = ctx)
 
 trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': 0.001})
 
+###### 그래프 #####
+
+gluoncv.utils.viz.plot_network(net)
 
 
 
