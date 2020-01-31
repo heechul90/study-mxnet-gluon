@@ -16,12 +16,12 @@ mx.random.seed(1)
 ctx = mx.cpu()
 
 def transformer(data, label):
-    data = mx.image.imresize(data, 96, 96)
+    data = mx.image.imresize(data, 224, 224)
     data = mx.nd.transpose(data, (2, 0, 1))
     data = data.astype(np.float32)
     return data, label
 
-batch_size = 64
+batch_size = 128
 train_data = gluon.data.DataLoader(
     gluon.data.vision.MNIST('dataset/data', train = True, transform = transformer),
     batch_size = batch_size, shuffle = False, last_batch = 'discard')
@@ -136,10 +136,6 @@ net.collect_params().initialize(mx.init.Normal(sigma = 0.05), ctx = ctx)
 
 trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': 0.001})
 
-###### 그래프 #####
-
-gluoncv.utils.viz.plot_network(net)
-
 
 
 # 오차 함수
@@ -180,3 +176,36 @@ for e in range(epochs):
     test_accuracy = evaluate_accuracy(test_data, net)
     train_accuracy = evaluate_accuracy(train_data, net)
     print("Epoch %s. Loss: %s, Train_acc %s, Test_acc %s" % (e, moving_loss, train_accuracy, test_accuracy))
+
+
+
+
+##### 파라미터 #####
+# Input_data	(224, 224)
+# Batch_size	128
+# 초깃값	        mx.init.Normal(sigma=0.5)
+# 경사하강법	    adam
+# 학습률	        0.001
+# Loss	        SoftmaxCrossEntropy
+
+##### test_data 정확도 #####
+# Epoch0  0.98147
+# Epoch1  0.98798
+# Epoch2  0.984875
+# Epoch3  0.990184
+# Epoch4  0.992287
+# Epoch5  0.98798
+# Epoch6  0.990685
+# Epoch7  0.987279
+# Epoch8  0.990985
+# Epoch9  0.990184
+
+
+
+
+
+
+
+
+
+
