@@ -135,11 +135,6 @@ net.collect_params().initialize(mx.init.Normal(sigma = 0.05), ctx = ctx)
 
 trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': 0.001})
 
-###### 그래프 #####
-import gluoncv
-gluoncv.utils.viz.plot_network(net, shape=(1, 3, 224, 224), save_prefix=None)
-
-plot_network(block, shape=(1, 3, 224, 224), save_prefix=None)
 
 
 # 오차 함수

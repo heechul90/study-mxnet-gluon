@@ -131,7 +131,7 @@ net = GoogLeNet(10)
 
 net.collect_params().initialize(mx.init.Xavier(magnitude = 0), ctx = ctx)
 
-trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
+trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.001})
 # 오차 함수
 softmax_cross_entropy  = gluon.loss.SoftmaxCrossEntropyLoss()
 
@@ -147,7 +147,7 @@ def evaluate_accuracy(data_iterator, net):
 
 
 ####### train ######
-epochs = 5
+epochs = 10
 smoothing_constant = 0.01
 
 for e in range(epochs):
@@ -170,3 +170,19 @@ for e in range(epochs):
     test_accuracy = evaluate_accuracy(test_data, net)
     train_accuracy = evaluate_accuracy(train_data, net)
     print("Epoch %s. Loss: %s, Train_acc %s, Test_acc %s" % (e, moving_loss, train_accuracy, test_accuracy))
+
+
+
+##### 파라미터 #####
+# Input_data	(96, 96)
+# Batch_size	64
+# 초깃값	mx.init.Xavier(magnitude=0)
+# 경사하강법	sgd
+# 학습률	0.001
+# Loss	SoftmaxCrossEntropy
+
+##### test_data 정확도 #####
+# Epoch0	0.102964
+# Epoch1	0.102764
+# Epoch2	0.102964
+# Epoch3	0.102964
