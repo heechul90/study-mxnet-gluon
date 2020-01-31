@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb36b0b4-b024-4ca8-b9cc-eb3f18b91b00" name="Default Changelist" comment="GoogLeNet with mxnet.gluon for deeplearning">
+    <list default="true" id="bb36b0b4-b024-4ca8-b9cc-eb3f18b91b00" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/googlenet-gluon/main5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/googlenet-gluon/main6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/googlenet-gluon/main1.py" beforeDir="false" afterPath="$PROJECT_DIR$/googlenet-gluon/main1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/googlenet-gluon/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/googlenet-gluon/main2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/googlenet-gluon/main4.py" beforeDir="false" afterPath="$PROJECT_DIR$/googlenet-gluon/main4.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/googlenet-gluon/main1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
+            <state relative-caret-position="168">
               <caret line="175" selection-start-line="175" selection-end-line="187" selection-end-column="20" />
               <folding>
                 <element signature="e#57#94#0" expanded="true" />
@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/googlenet-gluon/main2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="186" selection-start-line="186" selection-end-line="186" />
+            <state relative-caret-position="168">
+              <caret line="174" selection-start-line="174" selection-end-line="185" selection-end-column="20" />
               <folding>
                 <element signature="e#57#94#0" expanded="true" />
               </folding>
@@ -54,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/googlenet-gluon/main3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="757">
-              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+            <state relative-caret-position="300">
+              <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="200" selection-end-column="18" />
               <folding>
                 <element signature="e#57#94#0" expanded="true" />
               </folding>
@@ -66,11 +66,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/googlenet-gluon/main4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="104" column="55" lean-forward="true" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+            <state relative-caret-position="597">
+              <caret line="194" lean-forward="true" selection-start-line="194" selection-end-line="194" />
               <folding>
                 <element signature="e#57#94#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/googlenet-gluon/main5.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="192" column="18" lean-forward="true" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/googlenet-gluon/main6.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="191" column="18" lean-forward="true" selection-start-line="191" selection-start-column="18" selection-end-line="191" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -104,10 +122,12 @@
         <option value="$PROJECT_DIR$/googlenet-gluon/main.py" />
         <option value="$PROJECT_DIR$/googlenet-gluon/asdsad.py" />
         <option value="$PROJECT_DIR$/googlenet-gluon/googlenet-gluon01.py" />
-        <option value="$PROJECT_DIR$/googlenet-gluon/main3.py" />
-        <option value="$PROJECT_DIR$/googlenet-gluon/main4.py" />
         <option value="$PROJECT_DIR$/googlenet-gluon/main1.py" />
         <option value="$PROJECT_DIR$/googlenet-gluon/main2.py" />
+        <option value="$PROJECT_DIR$/googlenet-gluon/main3.py" />
+        <option value="$PROJECT_DIR$/googlenet-gluon/main4.py" />
+        <option value="$PROJECT_DIR$/googlenet-gluon/main5.py" />
+        <option value="$PROJECT_DIR$/googlenet-gluon/main6.py" />
       </list>
     </option>
   </component>
@@ -143,7 +163,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/googlenet-gluon" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -301,7 +321,28 @@
       <option name="project" value="LOCAL" />
       <updated>1580353417617</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="GoogLeNet with mxnet.gluon for deeplearning">
+      <created>1580456626228</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1580456626228</updated>
+    </task>
+    <task id="LOCAL-00020" summary="GoogLeNet with mxnet.gluon for deeplearning">
+      <created>1580456824522</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1580456824522</updated>
+    </task>
+    <task id="LOCAL-00021" summary="GoogLeNet with mxnet.gluon for deeplearning">
+      <created>1580456883456</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1580456883456</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -450,16 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/googlenet-gluon/main3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
-          <folding>
-            <element signature="e#57#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/googlenet-gluon/googlenet-gluon01.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3729">
@@ -470,19 +501,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/googlenet-gluon/main4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="104" column="55" lean-forward="true" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
-          <folding>
-            <element signature="e#57#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/googlenet-gluon/main1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="168">
           <caret line="175" selection-start-line="175" selection-end-line="187" selection-end-column="20" />
           <folding>
             <element signature="e#57#94#0" expanded="true" />
@@ -492,11 +513,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/googlenet-gluon/main2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="186" selection-start-line="186" selection-end-line="186" />
+        <state relative-caret-position="168">
+          <caret line="174" selection-start-line="174" selection-end-line="185" selection-end-column="20" />
           <folding>
             <element signature="e#57#94#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/googlenet-gluon/main5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="192" column="18" lean-forward="true" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/googlenet-gluon/main4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="194" lean-forward="true" selection-start-line="194" selection-end-line="194" />
+          <folding>
+            <element signature="e#57#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/googlenet-gluon/main3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="200" selection-end-column="18" />
+          <folding>
+            <element signature="e#57#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/googlenet-gluon/main6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="191" column="18" lean-forward="true" selection-start-line="191" selection-start-column="18" selection-end-line="191" selection-end-column="18" />
         </state>
       </provider>
     </entry>

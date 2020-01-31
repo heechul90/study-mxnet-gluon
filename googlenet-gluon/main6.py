@@ -133,7 +133,7 @@ net = GoogLeNet(10)
 
 net.collect_params().initialize(mx.init.Normal(sigma = 0.05), ctx = ctx)
 
-trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
+trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': 0.001})
 
 
 
@@ -183,12 +183,29 @@ for e in range(epochs):
 ##### 파라미터 #####
 # Input_data	(224, 224)
 # Batch_size	128
-# 초깃값	        mx.init.Xavier(magnitude=0)
-# 경사하강법	    sgd
+# 초깃값	        mx.init.Normal(sigma=0.5)
+# 경사하강법	    adam
 # 학습률	        0.1
 # Loss	        SoftmaxCrossEntropy
 
 ##### test_data 정확도 #####
-# Epoch0  0.113481
-# Epoch1  0.113381
-# Epoch2  0.113581
+# Epoch0  0.514923
+# Epoch1  0.751001
+# Epoch2  0.809895
+# Epoch3  0.840645
+# Epoch4  0.862279
+# Epoch5  0.872796
+# Epoch6  0.890524
+# Epoch7  0.901041
+# Epoch8  0.908052
+# Epoch9  0.913661
+
+
+
+
+
+
+
+
+
+
