@@ -84,7 +84,7 @@ def gluon_hybridblock(n=100, hybridize=True):
         net.hybridize()
 
 
-    net.collect_params().initialize(mx.init.One(), ctx=mx.cpu())
+    net.collect_params().initialize(mx.init.Xavier(), ctx = mx.cpu())
     gluoncv.utils.viz.plot_network(net)
 
 
