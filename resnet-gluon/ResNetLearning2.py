@@ -19,7 +19,7 @@ mx.random.seed(1)
 # Batch_size	64
 # 초깃값	mx.init.Xavier()
 # 경사하강법	sgd
-# 학습률	0.01
+# 학습률	0.1
 # Loss	SoftmaxCrossEntropy
 
 ##### Test Acc #####
@@ -33,8 +33,6 @@ mx.random.seed(1)
 # Epoch7	0.982371795
 # Epoch8	0.991085737
 # Epoch9	0.990785256
-
-
 
 ##### cpu, gpu 선택 #####
 ctx = mx.cpu()
