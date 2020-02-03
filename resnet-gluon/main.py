@@ -78,6 +78,7 @@ class ResNet(nn.Block):
     def forward(self, x):
         out = x
         for i, b in enumerate(self.net):
+        for i, b in enumerate(self.net):
             out = b(out)
             if self.verbose:
                 print('Block %d output: %s' % (i + 1, out.shape))
