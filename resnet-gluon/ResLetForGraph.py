@@ -77,8 +77,8 @@ def gluon_hybridblock(n=100, hybridize=True):
             out = x
             for i, b in enumerate(self.net):
                 out = b(out)
-                if self.verbose:
-                    print('Block %d output: %s' % (i + 1, out.shape))
+                # if self.verbose:
+                #     print('Block %d output: %s' % (i + 1, out.shape))
             return out
 
 
