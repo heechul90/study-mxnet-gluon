@@ -129,7 +129,7 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.5})
 
 
 # 오차 함수
-softmax_cross_entropy  = gluon.loss.SoftmaxCrossEntropyLoss()
+loss  = gluon.loss.SoftmaxCrossEntropyLoss()
 
 def evaluate_accuracy(data_iterator, net):
     acc = mx.metric.Accuracy()
@@ -152,7 +152,7 @@ for e in range(epochs):
         label = l.as_in_context(ctx)
         with autograd.record():
             output = net(data)
-            loss = softmax_cross_entropy(output, label)
+            loss = loss(output, label)
         loss.backward()
         trainer.step(data.shape[0])
 

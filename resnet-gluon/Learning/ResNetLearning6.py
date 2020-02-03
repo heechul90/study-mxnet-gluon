@@ -126,7 +126,7 @@ net = ResNet(10, verbose=False)
 
 net.collect_params().initialize(mx.init.Xavier(), ctx = ctx)
 
-trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
+trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': 0.1})
 
 
 

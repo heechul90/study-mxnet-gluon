@@ -1,17 +1,11 @@
 import mxnet as mx
 import time
 import gluoncv
-import numpy as np
 
 from mxnet import nd, autograd
 from mxnet import gluon
 from mxnet.gluon import nn
 
-mx.random.seed(1)
-##### 전처리 ##############################################
-ctx = mx.cpu()
-
-# dshape = (128, 1, 224, 224)
 dshape = (128, 3, 224, 224)
 nclass = 100
 
@@ -122,4 +116,3 @@ def gluon_hybridblock(n=100, hybridize=True):
     gluoncv.utils.viz.plot_network(net)
 
 gluon_hybridblock()
-

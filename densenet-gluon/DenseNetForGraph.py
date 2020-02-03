@@ -113,3 +113,7 @@ gluoncv.utils.viz.plot_network(net)
 
 
 gluon_hybridblock()
+
+
+model = gluoncv.model_zoo.get_darknet('v3', 53, pretrained=True)
+print(model)

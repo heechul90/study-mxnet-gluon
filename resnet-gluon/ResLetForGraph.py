@@ -37,6 +37,7 @@ def gluon_hybridblock(n=100, hybridize=True):
             return nd.relu(out + x)
 
 
+
     # ResNet 18
     class ResNet(nn.HybridBlock):
         def __init__(self, num_classes, verbose=False, **kwargs):
@@ -76,7 +77,10 @@ def gluon_hybridblock(n=100, hybridize=True):
             out = x
             for i, b in enumerate(self.net):
                 out = b(out)
+                if self.verbose:
+                    print('Block %d output: %s' % (i + 1, out.shape))
             return out
+
 
     net = ResNet(nclass, verbose=True)
 
@@ -84,7 +88,7 @@ def gluon_hybridblock(n=100, hybridize=True):
         net.hybridize()
 
 
-    net.collect_params().initialize(mx.init.Xavier(), ctx = mx.cpu())
+    net.collect_params().initialize(mx.init.One(), ctx = mx.cpu())
     gluoncv.utils.viz.plot_network(net)
 
 
