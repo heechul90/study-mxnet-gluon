@@ -19,7 +19,7 @@ mx.random.seed(1)
 # Batch_size	64
 # 초깃값	mx.init.Xavier()
 # 경사하강법	sgd
-# 학습률	0.01
+# 학습률	0.1
 # Loss	SoftmaxCrossEntropy
 
 ##### Test Acc #####
@@ -33,8 +33,6 @@ mx.random.seed(1)
 # Epoch7	0.982371795
 # Epoch8	0.991085737
 # Epoch9	0.990785256
-
-
 
 ##### cpu, gpu 선택 #####
 ctx = mx.cpu()
@@ -50,11 +48,11 @@ def transformer(data, label):
 
 batch_size = 64
 train_data = gluon.data.DataLoader(
-    gluon.data.vision.MNIST('dataset/data', train = True, transform = transformer),
+    gluon.data.vision.MNIST('dataset/MNIST', train = True, transform = transformer),
     batch_size = batch_size, shuffle = False, last_batch = 'discard')
 
 test_data = gluon.data.DataLoader(
-    gluon.data.vision.MNIST('dataset/data', train = False, transform = transformer),
+    gluon.data.vision.MNIST('dataset/MNIST', train = False, transform = transformer),
     batch_size = batch_size, shuffle = True, last_batch = 'discard')
 
 
@@ -126,7 +124,7 @@ net = ResNet(10, verbose=False)
 
 net.collect_params().initialize(mx.init.Xavier(), ctx = ctx)
 
-trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': 0.01})
+trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.001})
 
 
 

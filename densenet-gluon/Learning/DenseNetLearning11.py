@@ -39,11 +39,11 @@ def transformer(data, label):
 
 batch_size = 64
 train_data = gluon.data.DataLoader(
-    gluon.data.vision.MNIST('dataset/data', train = True, transform = transformer),
+    gluon.data.vision.MNIST('dataset/MNIST', train = True, transform = transformer),
     batch_size = batch_size, shuffle = False, last_batch = 'discard')
 
 test_data = gluon.data.DataLoader(
-    gluon.data.vision.MNIST('dataset/data', train = False, transform = transformer),
+    gluon.data.vision.MNIST('dataset/MNIST', train = False, transform = transformer),
     batch_size = batch_size, shuffle = True, last_batch = 'discard')
 
 
