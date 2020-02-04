@@ -16,9 +16,10 @@ ctx = utils.try_gpu()
 net.initialize(ctx=ctx)
 print('initialize weight on', ctx)
 
-###### 그래프 #####
+############### 그래프 ###############
 import gluoncv
 gluoncv.utils.viz.plot_network(net)
+#####################################
 
 # 获取数据
 batch_size = 256

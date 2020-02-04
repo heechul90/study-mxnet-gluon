@@ -100,7 +100,7 @@ net.initialize(ctx=ctx, init=init.Xavier())
 
 ############### 그래프 ###############
 import gluoncv
-gluoncv.utils.viz.plot_network(net, save_prefix=True)
+gluoncv.utils.viz.plot_network(net, save_prefix=False)
 #####################################
 
 
