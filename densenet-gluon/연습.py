@@ -90,6 +90,15 @@ ctx = utils.try_gpu()
 net = dense_net()
 net.initialize(ctx=ctx, init=init.Xavier())
 
+############# 그래프
+# import gluoncv
+# gluoncv.utils.viz.plot_network(net)
+print(net.collect_params())
+type(net.collect_params())
+print(net.weight.data())
+print(net.bias.data())
+
+
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
 utils.train(train_data, test_data, net, loss, trainer, ctx, num_epochs=1)

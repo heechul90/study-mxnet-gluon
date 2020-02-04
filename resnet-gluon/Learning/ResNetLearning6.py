@@ -129,7 +129,6 @@ net.collect_params().initialize(mx.init.Xavier(), ctx = ctx)
 trainer = gluon.Trainer(net.collect_params(), 'adam', {'learning_rate': 0.1})
 
 
-
 # 오차 함수
 loss  = gluon.loss.SoftmaxCrossEntropyLoss()
 
