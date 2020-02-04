@@ -123,7 +123,7 @@ def dense_net():
 ##### 최적화 #####
 net = dense_net()
 
-net.collect_params().initialize(mx.init.Xavier(magnitude=1), ctx = ctx)
+net.collect_params().initialize(mx.init.Xavier(magnitude=2), ctx = ctx)
 
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
 
