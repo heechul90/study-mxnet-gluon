@@ -40,11 +40,14 @@ class Residual(nn.HybridBlock):
             self.conv3 = nn.Conv2D(channels, kernel_size=1, strides=strides)
 
     def forward(self, x):
-        out = nd.relu(self.bn1(self.conv1(x)))
+        out = mx.sym.relu(self.bn1(self.conv1(x)))
         out = self.bn2(self.conv2(out))
         if not self.same_shape:
             x = self.conv3(x)
-        return nd.relu(out + x)
+
+        return mx.sym.relu(out + x)
+
+
 
 
 # ResNet 18
@@ -97,7 +100,7 @@ net.initialize(ctx=ctx, init=init.Xavier())
 
 ############### 그래프 ###############
 import gluoncv
-gluoncv.utils.viz.plot_network(net)
+gluoncv.utils.viz.plot_network(net, save_prefix=True)
 #####################################
 
 
