@@ -146,6 +146,7 @@ def evaluate_accuracy(data_iterator, net):
     return acc.get()
 
 
+
 ####### train ######
 epochs = 10
 smoothing_constant = 0.01

@@ -91,7 +91,7 @@ def gluon_hybridblock(n=100, hybridize=True):
                 nn.Dense(num_classes))
         return net
 
-    net = DenseBlock(nclass, verbose=True)
+    net = dense_net()
 
     if hybridize:
         net.hybridize()
@@ -99,21 +99,10 @@ def gluon_hybridblock(n=100, hybridize=True):
     net.collect_params().initialize(mx.init.One(), ctx=mx.cpu())
     gluoncv.utils.viz.plot_network(net)
 
-
-#################################################################
-# train
-
-train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=32)
-
-ctx = utils.try_gpu()
-net = dense_net()
-net.initialize(ctx=ctx, init=init.Xavier())
-
-gluoncv.utils.viz.plot_network(net)
-
-
 gluon_hybridblock()
+#################################################################
 
 
-model = gluoncv.model_zoo.get_darknet('v3', 53, pretrained=True)
-print(model)
+
+# model = gluoncv.model_zoo.get_darknet('v3', 53, pretrained=True)
+# print(model)
