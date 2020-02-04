@@ -7,8 +7,8 @@ from mxnet import nd
 from mxnet.gluon import nn
 from mxnet import gluon
 from mxnet import init
+import mxnet as mx
 import utils
-import gluoncv
 
 
 def conv_block(channels):
@@ -32,7 +32,7 @@ class DenseBlock(nn.HybridBlock):
     def forward(self, x):
         for layer in self.net:
             out = layer(x)
-            x = nd.concat(x, out, dim=1)
+            x = mx.sym.concat(x, out, dim=1)
         return x
 
 
@@ -91,9 +91,12 @@ ctx = utils.try_gpu()
 net = dense_net()
 net.initialize(ctx=ctx, init=init.Xavier())
 
+############### 그래프 ###############
+import gluoncv
+gluoncv.utils.viz.plot_network(net)
+#####################################
 
-##### 그래프 그리기 #####
-gluoncv.utils.viz.plot_network(net, shape=(1, 3, 224, 224), save_prefix=None)
 
-
-
+loss = gluon.loss.SoftmaxCrossEntropyLoss()
+trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
+utils.train(train_data, test_data, net, loss, trainer, ctx, num_epochs=1)

@@ -4,6 +4,8 @@
 from mxnet.gluon import nn
 from mxnet import gluon
 from mxnet import init
+
+import mxnet as mx
 import utils
 
 # 多个 conv layers 加一个 Pooling
@@ -49,9 +51,10 @@ train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=96)
 ctx = utils.try_gpu()
 net.initialize(ctx=ctx, init=init.Xavier())
 
-###### 그래프 #####
+############### 그래프 ###############
 import gluoncv
 gluoncv.utils.viz.plot_network(net)
+#####################################
 
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.05})
