@@ -53,7 +53,7 @@ net.initialize(ctx=ctx, init=init.Xavier())
 
 ############### 그래프 ###############
 import gluoncv
-gluoncv.utils.viz.plot_network(net)
+gluoncv.utils.viz.plot_network(net, shape=(1, 3, 36, 36))
 #####################################
 
 loss = gluon.loss.SoftmaxCrossEntropyLoss()

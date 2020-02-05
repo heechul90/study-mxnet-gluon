@@ -18,7 +18,7 @@ ctx = mx.cpu()
 
 ###### 전처리 ##############################################
 def transformer(data, label):
-    data = mx.image.imresize(data, 36, 36)
+    data = mx.image.imresize(data, 128, 128)
     data = mx.nd.transpose(data, (2, 0, 1))
     data = data.astype(np.float32)
     return data, label
