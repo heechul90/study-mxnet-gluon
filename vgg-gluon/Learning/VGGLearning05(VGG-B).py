@@ -1,4 +1,4 @@
-# VGG 
+# VGG - B
 # @paper https://arxiv.org/abs/1409.1556
 
 from __future__ import print_function
@@ -18,7 +18,7 @@ ctx = mx.cpu()
 
 ###### 전처리 ##############################################
 def transformer(data, label):
-    data = mx.image.imresize(data, 36, 36)
+    data = mx.image.imresize(data, 224, 224)
     data = mx.nd.transpose(data, (2, 0, 1))
     data = data.astype(np.float32)
     return data, label
@@ -55,7 +55,7 @@ def vgg_stack(architecture):
 ###############################################################
 # model and params
 num_outputs = 10
-architecture = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
+architecture = ((2, 64), (2, 128), (2, 256), (2, 512), (2, 512))
 net = nn.HybridSequential()
 # add name_scope on the outermost Sequential
 # 8 conv layer + 3 denses = VGG 11
@@ -70,11 +70,15 @@ with net.name_scope():
 
 ###############################################################
 
+############### 그래프 ###############
+import gluoncv
+gluoncv.utils.viz.plot_network(net, shape=(64, 3, 224, 224))
+#####################################
+
 ##### 최적화 #####
 net.collect_params().initialize(mx.init.Xavier(), ctx = ctx)
 
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
-
 
 ##### 오차함수 #####
 softmax_cross_entropy  = gluon.loss.SoftmaxCrossEntropyLoss()

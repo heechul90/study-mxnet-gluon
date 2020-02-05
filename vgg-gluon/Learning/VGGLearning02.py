@@ -34,7 +34,7 @@ test_data = gluon.data.DataLoader(
 
 # 多个 conv layers 加一个 Pooling
 def vgg_block(num_convs, channels):
-    out = nn.Sequential()
+    out = nn.HybridSequential()
     for _ in range(num_convs):
         out.add(
             nn.Conv2D(
@@ -46,7 +46,7 @@ def vgg_block(num_convs, channels):
 
 # 顺序添加多个 vgg_block
 def vgg_stack(architecture):
-    out = nn.Sequential()
+    out = nn.HybridSequential()
     for (num_convs, channels) in architecture:
         out.add(vgg_block(num_convs, channels))
     return out
@@ -56,7 +56,7 @@ def vgg_stack(architecture):
 # model and params
 num_outputs = 10
 architecture = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
-net = nn.Sequential()
+net = nn.HybridSequential()
 # add name_scope on the outermost Sequential
 # 8 conv layer + 3 denses = VGG 11
 # 13 conv layer + 3 denses = VGG 16

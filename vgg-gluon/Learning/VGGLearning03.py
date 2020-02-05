@@ -18,7 +18,7 @@ ctx = mx.cpu()
 
 ###### 전처리 ##############################################
 def transformer(data, label):
-    data = mx.image.imresize(data, 36, 36)
+    data = mx.image.imresize(data, 224, 224)
     data = mx.nd.transpose(data, (2, 0, 1))
     data = data.astype(np.float32)
     return data, label
@@ -74,7 +74,6 @@ with net.name_scope():
 net.collect_params().initialize(mx.init.Xavier(), ctx = ctx)
 
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
-
 
 ##### 오차함수 #####
 softmax_cross_entropy  = gluon.loss.SoftmaxCrossEntropyLoss()

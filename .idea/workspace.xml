@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb36b0b4-b024-4ca8-b9cc-eb3f18b91b00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/densenet-gluon/DensenetForGraph(수정).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning03.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning04(VGG-A).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning05(VGG-B).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning06(VGG-C).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning07(VGG-D).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning08(VGG-E).py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning01.py" beforeDir="false" afterPath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vgg-gluon/vggForGraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/vgg-gluon/vggForGraph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning02.py" beforeDir="false" afterPath="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning02.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,44 +21,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning01.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/densenet-gluon/DensenetForGraph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="462">
+              <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
               <folding>
-                <element signature="e#49#86#0" expanded="true" />
+                <element signature="e#122#142#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning02.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1497">
-              <caret line="25" column="15" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vgg-gluon/vggForGraph.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/densenet-gluon/DensenetForGraph(수정).py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+              <caret line="96" column="35" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
               <folding>
-                <element signature="e#49#75#0" expanded="true" />
+                <element signature="e#122#142#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vgg-gluon/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1233">
-              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -86,14 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resnet-gluon/ResNetLearning1.py" />
-        <option value="$PROJECT_DIR$/resnet-gluon/ResNetLearning2.py" />
-        <option value="$PROJECT_DIR$/resnet-gluon/123.py" />
-        <option value="$PROJECT_DIR$/resnet-gluon/main.py" />
-        <option value="$PROJECT_DIR$/googlenet-gluon/GoogLeNetForGraph.py" />
-        <option value="$PROJECT_DIR$/resnet-gluon/Test/test1.py" />
-        <option value="$PROJECT_DIR$/cnn-gluon/main.py" />
-        <option value="$PROJECT_DIR$/resnet-gluon/12341234.py" />
         <option value="$PROJECT_DIR$/densenet-gluon/Learning/Learning1.py" />
         <option value="$PROJECT_DIR$/googlenet-gluon/Learning/GoogLeNetLearning2.py" />
         <option value="$PROJECT_DIR$/densenet-gluon/DenseNetForGraph.py" />
@@ -134,9 +114,17 @@
         <option value="$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning4.py" />
         <option value="$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning5.py" />
         <option value="$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning6.py" />
-        <option value="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning02.py" />
         <option value="$PROJECT_DIR$/vgg-gluon/vggForGraph.py" />
         <option value="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning01.py" />
+        <option value="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning02.py" />
+        <option value="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning03.py" />
+        <option value="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning04.py" />
+        <option value="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning05.py" />
+        <option value="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning06(VGG-D).py" />
+        <option value="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning08(VGG-E).py" />
+        <option value="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning05(VGG-B).py" />
+        <option value="$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning06(VGG-C).py" />
+        <option value="$PROJECT_DIR$/densenet-gluon/DensenetForGraph(수정).py" />
       </list>
     </option>
   </component>
@@ -162,13 +150,7 @@
             <path>
               <item name="Mxnet_Learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mxnet_Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="vgg-gluon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxnet_Learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxnet_Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="vgg-gluon" type="462c0819:PsiDirectoryNode" />
-              <item name="Learning" type="462c0819:PsiDirectoryNode" />
+              <item name="densenet-gluon" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -179,16 +161,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vgg-gluon/Learning" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/densenet-gluon" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\HeechulFromGithub\Mxnet_Learning\vgg-gluon\Learning" />
+      <recent name="D:\HeechulFromGithub\Mxnet_Learning\densenet-gluon" />
       <recent name="D:\HeechulFromGithub\Mxnet_Learning\resnet-gluon" />
+      <recent name="D:\HeechulFromGithub\Mxnet_Learning\vgg-gluon\Learning" />
       <recent name="D:\HeechulFromGithub\Mxnet_Learning\vgg-gluon" />
       <recent name="D:\HeechulFromGithub\Mxnet_Learning\googlenet-gluon" />
-      <recent name="D:\HeechulFromGithub\Mxnet_Learning\densenet-gluon\Learning" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -445,14 +427,21 @@
       <option name="project" value="LOCAL" />
       <updated>1580805283254</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="VGGNet in mxnet.gluon for deeplearning">
+      <created>1580864436922</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1580864436923</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2293869" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2293869" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -465,7 +454,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32962137" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.31625834" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.27282852" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -477,17 +466,10 @@
     <MESSAGE value="ResNet with mxnet.gluon for deeplearning" />
     <MESSAGE value="ResNet in mxnet.gluon for deeplearning" />
     <MESSAGE value="DenseNet in mxnet.gluon for deeplearning" />
-    <option name="LAST_COMMIT_MESSAGE" value="DenseNet in mxnet.gluon for deeplearning" />
+    <MESSAGE value="VGGNet in mxnet.gluon for deeplearning" />
+    <option name="LAST_COMMIT_MESSAGE" value="VGGNet in mxnet.gluon for deeplearning" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning2.py" />
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning3.py" />
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning4.py" />
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning5.py" />
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning6.py" />
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning8.py" />
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning7.py" />
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning9.py" />
     <entry file="file://$PROJECT_DIR$/densenet-gluon/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
@@ -616,27 +598,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/DensenetForGraph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
-          <folding>
-            <element signature="e#122#142#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resnet-gluon/ResLetForGraph1.py" />
-    <entry file="file://$PROJECT_DIR$/resnet-gluon/ResLetForGraph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="107" column="27" lean-forward="true" selection-start-line="107" selection-start-column="27" selection-end-line="107" selection-end-column="27" />
-          <folding>
-            <element signature="e#105#131#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning01.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -727,6 +689,40 @@
     <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning5.py" />
     <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning6.py" />
     <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning4.py" />
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="e#49#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning02.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/vggForGraph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="53" selection-start-line="53" selection-end-line="56" selection-end-column="37" />
+          <folding>
+            <element signature="e#49#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vgg-gluon/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1233">
@@ -734,29 +730,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vgg-gluon/vggForGraph.py">
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning04(VGG-A).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+        <state relative-caret-position="-693">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning05(VGG-B).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1056">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resnet-gluon/ResLetForGraph50.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3081">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning08(VGG-E).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="57" column="64" lean-forward="true" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning07(VGG-D).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="57" column="64" lean-forward="true" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning06(VGG-C).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="58" column="27" lean-forward="true" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resnet-gluon/ResLetForGraph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="68" column="38" lean-forward="true" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
           <folding>
-            <element signature="e#49#75#0" expanded="true" />
+            <element signature="e#105#131#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning02.py">
+    <entry file="file://$PROJECT_DIR$/densenet-gluon/DensenetForGraph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1497">
-          <caret line="25" column="15" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+        <state relative-caret-position="462">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <element signature="e#122#142#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning01.py">
+    <entry file="file://$PROJECT_DIR$/densenet-gluon/DensenetForGraph(수정).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="198">
+          <caret line="96" column="35" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
           <folding>
-            <element signature="e#49#86#0" expanded="true" />
+            <element signature="e#122#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
