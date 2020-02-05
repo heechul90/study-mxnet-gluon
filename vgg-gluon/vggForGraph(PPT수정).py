@@ -12,11 +12,12 @@ import utils
 def vgg_block(num_convs, channels):
     out = nn.HybridSequential()
     for _ in range(num_convs):
-        out.add(
-            nn.Conv2D(
-                channels=channels, kernel_size=3, padding=1,
-                activation='relu'))
-    out.add(nn.MaxPool2D(pool_size=2, strides=2))
+        out.add(nn.Conv2D(channels=channels,
+                          kernel_size=3,
+                          padding=1,
+                          activation='relu'))
+    out.add(nn.MaxPool2D(pool_size=2,
+                         strides=2))
     return out
 
 
@@ -38,11 +39,13 @@ net = nn.HybridSequential()
 # 13 conv layer + 3 denses = VGG 16
 # 16 conv layer + 3 denses = VGG 19
 with net.name_scope():
-    net.add(
-        vgg_stack(architecture), nn.Flatten(), nn.Dense(
-            4096, activation="relu"), nn.Dropout(.5),
-        nn.Dense(4096, activation="relu"), nn.Dropout(.5),
-        nn.Dense(num_outputs))
+    net.add(vgg_stack(architecture),
+            nn.Flatten(),
+            nn.Dense(4096, activation="relu"),
+            nn.Dropout(.5),
+            nn.Dense(4096, activation="relu"),
+            nn.Dropout(.5),
+            nn.Dense(num_outputs))
 
 ###############################################################
 # train
