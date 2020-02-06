@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb36b0b4-b024-4ca8-b9cc-eb3f18b91b00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/googlenet-gluon/GoogLeNetForGraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/googlenet-gluon/GoogLeNetForGraph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resnet-gluon/ResNetParam.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/resnet-gluon/ResNetParam.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vgg-gluon/VGGParam.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/vgg-gluon/VGGParam.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilenetV2/MobileNetV2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/densenet-gluon/DensenetForGraph(PPT수정).py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-228">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="1584">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="e#122#142#0" expanded="true" />
               </folding>
@@ -26,13 +25,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/googlenet-gluon/GoogLeNetForGraph.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="531">
               <caret line="118" selection-start-line="118" selection-end-line="118" />
               <folding>
                 <element signature="e#57#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mobilenetV2/MobileNetV2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="129" column="115" lean-forward="true" selection-start-line="129" selection-start-column="115" selection-end-line="129" selection-end-column="115" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,7 +78,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning2.py" />
         <option value="$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning3.py" />
         <option value="$PROJECT_DIR$/densenet-gluon/연습.py" />
         <option value="$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning4.py" />
@@ -118,6 +128,7 @@
         <option value="$PROJECT_DIR$/resnet-gluon/ResLetForGraph(PPT수정).py" />
         <option value="$PROJECT_DIR$/densenet-gluon/DensenetForGraph(PPT수정).py" />
         <option value="$PROJECT_DIR$/googlenet-gluon/GoogLeNetForGraph.py" />
+        <option value="$PROJECT_DIR$/mobilenetV2/MobileNetV2.py" />
       </list>
     </option>
   </component>
@@ -133,6 +144,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,7 +161,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,14 +445,21 @@
       <option name="project" value="LOCAL" />
       <updated>1580889745428</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="deeplearning in mxnet.gluon">
+      <created>1580963880864</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1580963880864</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18551797" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18551797" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -454,7 +472,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32962137" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.042316258" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.11915368" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -486,19 +504,10 @@
     <MESSAGE value="ResNet in mxnet.gluon for deeplearning" />
     <MESSAGE value="DenseNet in mxnet.gluon for deeplearning" />
     <MESSAGE value="VGGNet in mxnet.gluon for deeplearning" />
-    <option name="LAST_COMMIT_MESSAGE" value="VGGNet in mxnet.gluon for deeplearning" />
+    <MESSAGE value="deeplearning in mxnet.gluon" />
+    <option name="LAST_COMMIT_MESSAGE" value="deeplearning in mxnet.gluon" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/alexnet-gluon/AlexNetForGraph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#122#148#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/alexnet-gluon/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -800,8 +809,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/densenet-gluon/DensenetForGraph(PPT수정).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="1584">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="e#122#142#0" expanded="true" />
           </folding>
@@ -814,6 +823,16 @@
           <caret line="118" selection-start-line="118" selection-end-line="118" />
           <folding>
             <element signature="e#57#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobilenetV2/MobileNetV2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="129" column="115" lean-forward="true" selection-start-line="129" selection-start-column="115" selection-end-line="129" selection-end-column="115" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
