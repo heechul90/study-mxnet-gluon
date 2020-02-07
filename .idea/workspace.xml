@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb36b0b4-b024-4ca8-b9cc-eb3f18b91b00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mobilenetV2/MobileNetV2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/googlenet-gluon/GoogLeNetForGraph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
+            <state relative-caret-position="3696">
               <caret line="118" selection-start-line="118" selection-end-line="118" />
               <folding>
                 <element signature="e#57#83#0" expanded="true" />
@@ -41,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/mobilenetV2/MobileNetV2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="528">
-              <caret line="129" column="115" lean-forward="true" selection-start-line="129" selection-start-column="115" selection-end-line="129" selection-end-column="115" />
+              <caret line="129" column="115" selection-start-line="129" selection-start-column="115" selection-end-line="129" selection-end-column="115" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -457,7 +456,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18551797" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -819,7 +817,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/googlenet-gluon/GoogLeNetForGraph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
+        <state relative-caret-position="3696">
           <caret line="118" selection-start-line="118" selection-end-line="118" />
           <folding>
             <element signature="e#57#83#0" expanded="true" />
@@ -830,7 +828,7 @@
     <entry file="file://$PROJECT_DIR$/mobilenetV2/MobileNetV2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
-          <caret line="129" column="115" lean-forward="true" selection-start-line="129" selection-start-column="115" selection-end-line="129" selection-end-column="115" />
+          <caret line="129" column="115" selection-start-line="129" selection-start-column="115" selection-end-line="129" selection-end-column="115" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
