@@ -1,4 +1,4 @@
-# VGG 
+### VGG
 # @paper https://arxiv.org/abs/1409.1556
 
 from mxnet.gluon import nn
