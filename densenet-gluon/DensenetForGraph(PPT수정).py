@@ -103,7 +103,6 @@ import gluoncv
 gluoncv.utils.viz.plot_network(net)
 #####################################
 
-
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
 utils.train(train_data, test_data, net, loss, trainer, ctx, num_epochs=1)
