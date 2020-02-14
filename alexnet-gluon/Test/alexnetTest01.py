@@ -29,9 +29,9 @@ class AllOneNet(nn.HybridBlock):
                     layer1.add(nn.MaxPool2D(pool_size=(3,3),strides=(2,2)))
                     layer1.add(nn.Flatten())
                     layer1.add(nn.Dense(units=4096,activation="relu"))
-                    layer1.add(nn.Dropout(rate=0.5,))
+                    layer1.add(nn.Dropout(rate=0.5,axes=()))
                     layer1.add(nn.Dense(units=4096,activation="relu"))
-                    layer1.add(nn.Dropout(rate=0.5,))
+                    layer1.add(nn.Dropout(rate=0.5,axes=()))
                     layer1.add(nn.Dense(units=10,activation="relu"))
 
                 # chain blocks together
@@ -51,11 +51,9 @@ import gluoncv
 gluoncv.utils.viz.plot_network(net, shape=inputShape)
 #####################################
 
-#    net.cast('float32')
+#    net.cas('float32')
 #    net.initialize(mx.init.Xavier(), force_reinit=True, ctx=mx.cpu())
 #    net.hybridize()
 #    net.forward(mx.nd.empty(inputShape, dtype='float32', ctx=mx.cpu()))
 #    filename="model"
 #    net.export(filename)
-
-
