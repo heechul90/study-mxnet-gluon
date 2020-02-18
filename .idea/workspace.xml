@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bb36b0b4-b024-4ca8-b9cc-eb3f18b91b00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resnet2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest02.py" beforeDir="false" afterPath="$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest02.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest03.py" beforeDir="false" afterPath="$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest03.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,33 +15,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vgg-gluon/vggForGraph(PPT수정).py">
+        <entry file="file://$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest02.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resnet-gluon/ResLetForGraph(PPT수정).py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state>
+              <caret line="17" column="10" selection-start-line="17" selection-end-line="17" selection-end-column="10" />
               <folding>
-                <element signature="e#105#131#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/densenet-gluon/DensenetForGraph(PPT수정).py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-              <folding>
-                <element signature="e#122#142#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,15 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning9.py" />
-        <option value="$PROJECT_DIR$/densenet-gluon/main.py" />
-        <option value="$PROJECT_DIR$/densenet-gluon/DensenetForGraph1.py" />
-        <option value="$PROJECT_DIR$/googlenet-gluon/GoogLeNetForGraph1.py" />
-        <option value="$PROJECT_DIR$/alexnet-gluon/main.py" />
-        <option value="$PROJECT_DIR$/alexnet-gluon/AlexNetForGraph.py" />
-        <option value="$PROJECT_DIR$/densenet-gluon/DensenetForGraph.py" />
-        <option value="$PROJECT_DIR$/cnn-gluon/cnnForGraph.py" />
-        <option value="$PROJECT_DIR$/resnet-gluon/ResLetForGraph1.py" />
         <option value="$PROJECT_DIR$/resnet-gluon/ResLetForGraph.py" />
         <option value="$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning01.py" />
         <option value="$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning02.py" />
@@ -118,23 +89,31 @@
         <option value="$PROJECT_DIR$/googlenet-gluon/GoogLeNetForGraph.py" />
         <option value="$PROJECT_DIR$/mobilenetV2/MobileNetV2.py" />
         <option value="$PROJECT_DIR$/vgg-gluon/vggForGraph.py" />
-        <option value="$PROJECT_DIR$/densenet-gluon/DensenetForGraph(PPT수정).py" />
         <option value="$PROJECT_DIR$/resnet2.py" />
         <option value="$PROJECT_DIR$/inceptionV3-gluon/InceptionV3.py" />
         <option value="$PROJECT_DIR$/inceptionV3-gluon/InceptionV31111.py" />
         <option value="$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest01.py" />
-        <option value="$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest03.py" />
         <option value="$PROJECT_DIR$/resnet-gluon/Test/ResNetTest01.py" />
-        <option value="$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest02.py" />
         <option value="$PROJECT_DIR$/resnet-gluon/ResLetForGraph(PPT수정).py" />
+        <option value="$PROJECT_DIR$/densenet-gluon/DensenetForGraph(PPT수정).py" />
+        <option value="D:/바탕화면/vgg(11layer).py" />
+        <option value="D:/바탕화면/ResLet(18layer).py" />
+        <option value="D:/바탕화면/vgg(11층).py" />
+        <option value="D:/바탕화면/resnet(18층).py" />
+        <option value="D:/바탕화면/vggForGraph(PPT수정).py" />
+        <option value="D:/바탕화면/ResLetForGraph.py" />
+        <option value="D:/바탕화면/vgg 11.py" />
+        <option value="D:/바탕화면/main.py" />
+        <option value="D:/바탕화면/densenet 121.py" />
+        <option value="$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest03.py" />
+        <option value="$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest02.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2872" />
-    <option name="y" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1056" />
+    <option name="x" value="1913" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -142,6 +121,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,18 +132,28 @@
             <path>
               <item name="Mxnet_Learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mxnet_Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="densenet-gluon" type="462c0819:PsiDirectoryNode" />
+              <item name="alexnet-gluon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mxnet_Learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mxnet_Learning" type="462c0819:PsiDirectoryNode" />
+              <item name="alexnet-gluon" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mxnet_Learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mxnet_Learning" type="462c0819:PsiDirectoryNode" />
+              <item name="vgg-gluon" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/alexnet-gluon/Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DataPreprocessing" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -471,14 +461,20 @@
       <option name="project" value="LOCAL" />
       <updated>1581664980666</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="deeplearning in mxnet.gluon">
+      <created>1581666572093</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1581666572093</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34143764" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15274842" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -491,13 +487,13 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32962137" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.16703786" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.95768374" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18551797" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15274842" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -527,92 +523,12 @@
     <option name="LAST_COMMIT_MESSAGE" value="deeplearning in mxnet.gluon" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning03.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning04.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning05.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning06.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning07.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning08.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning09.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning11.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning12.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning1.py" />
     <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning2.py" />
     <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning3.py" />
     <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning5.py" />
     <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning6.py" />
     <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning4.py" />
-    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="e#49#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning02.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -658,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/googlenet-gluon/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vgg-gluon/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="891">
@@ -672,13 +581,6 @@
           <folding>
             <element signature="e#49#75#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning04(VGG-A).py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -710,9 +612,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/googlenet-gluon/InceptionV3.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/googlenet-gluon/InceptionV3.py" />
     <entry file="file://$PROJECT_DIR$/inceptionV3-gluon/InceptionV3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -770,16 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest03.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resnet-gluon/Test/ResNetTest01.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -800,42 +690,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest02.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning01.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/densenet-gluon/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/densenet-gluon/DensenetForGraph.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="635">
           <caret line="101" column="73" lean-forward="true" selection-start-line="101" selection-start-column="73" selection-end-line="101" selection-end-column="73" />
           <folding>
             <element signature="e#122#142#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resnet-gluon/ResLetForGraph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2566">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#105#131#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -857,30 +717,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resnet2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-850">
-          <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resnet2.py" />
     <entry file="file://$PROJECT_DIR$/densenet-gluon/DensenetForGraph(PPT수정).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="-1033">
+          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/바탕화면/vgg(11layer).py" />
+    <entry file="file://D:/바탕화면/ResLet(18layer).py" />
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning04(VGG-A).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resnet-gluon/Learning/ResNetLearning01.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vgg-gluon/Learning/VGGLearning01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1244">
+          <caret line="68" column="30" lean-forward="true" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
           <folding>
-            <element signature="e#122#142#0" expanded="true" />
+            <element signature="e#49#86#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/바탕화면/resnet(18층).py" />
+    <entry file="file://D:/바탕화면/vgg(11층).py" />
     <entry file="file://$PROJECT_DIR$/resnet-gluon/ResLetForGraph(PPT수정).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="33">
+          <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
           <folding>
             <element signature="e#105#131#0" expanded="true" />
           </folding>
@@ -889,8 +761,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vgg-gluon/vggForGraph(PPT수정).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="264">
+          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/바탕화면/vggForGraph(PPT수정).py" />
+    <entry file="file://$PROJECT_DIR$/resnet-gluon/ResLetForGraph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding>
+            <element signature="e#105#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/바탕화면/ResLetForGraph.py" />
+    <entry file="file://D:/바탕화면/vgg 11.py" />
+    <entry file="file://D:/바탕화면/main.py" />
+    <entry file="file://D:/바탕화면/densenet 121.py" />
+    <entry file="file://$PROJECT_DIR$/densenet-gluon/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/googlenet-gluon/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2112">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning12.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="168" column="36" selection-end-line="168" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="23" column="45" lean-forward="true" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest02.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="17" column="10" selection-start-line="17" selection-end-line="17" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
