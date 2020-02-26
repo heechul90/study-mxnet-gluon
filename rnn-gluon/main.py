@@ -9,7 +9,7 @@ import utils
 context = utils.try_gpu()
 
 import zipfile
-with zipfile.ZipFile('data/ptb.zip', 'r') as zin:
+with zipfile.ZipFile('./rnn-scratch/data/ptb.zip', 'r') as zin:
     zin.extractall('data/')
 
 
@@ -154,12 +154,15 @@ test_data = batchify(corpus.test, batch_size).as_in_context(context)
 
 model = RNNModel(model_name, vocab_size, embed_dim, hidden_dim, num_layers,
                  dropout_rate)
+
 model.collect_params().initialize(mx.init.Xavier(), ctx=context)
+
 trainer = gluon.Trainer(model.collect_params(), 'sgd', {
     'learning_rate': lr,
     'momentum': 0,
     'wd': 0
 })
+
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 
 
