@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb36b0b4-b024-4ca8-b9cc-eb3f18b91b00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rnn-gluon/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/rnn-gluon/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lstm-scratch/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/lstm-scratch/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lstm-scratch/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="165">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#437#451#0" expanded="true" />
               </folding>
@@ -46,23 +45,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rnn-gluon/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="363">
+              <caret line="11" column="41" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="41" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rnn-gluon/data">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -97,7 +87,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning02.py" />
         <option value="$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning03.py" />
         <option value="$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning04.py" />
         <option value="$PROJECT_DIR$/densenet-gluon/Learning/DenseNetLearning05.py" />
@@ -148,6 +137,7 @@
         <option value="$PROJECT_DIR$/alexnet-gluon/Test/alexnetTest02.py" />
         <option value="$PROJECT_DIR$/rnn-gluon/data" />
         <option value="$PROJECT_DIR$/rnn-gluon/main.py" />
+        <option value="$PROJECT_DIR$/lstm-scratch/main.py" />
       </list>
     </option>
   </component>
@@ -172,18 +162,12 @@
             <path>
               <item name="Mxnet_Learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mxnet_Learning" type="462c0819:PsiDirectoryNode" />
+              <item name="lstm-scratch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mxnet_Learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mxnet_Learning" type="462c0819:PsiDirectoryNode" />
               <item name="rnn-gluon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxnet_Learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxnet_Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="rnn-scratch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxnet_Learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxnet_Learning" type="462c0819:PsiDirectoryNode" />
-              <item name="rnn-scratch" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -194,7 +178,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mxnet_RNN" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -509,12 +493,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581666572093</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="deeplearning in mxnet.gluon">
+      <created>1582704946129</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1582704946130</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15274842" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -529,7 +519,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32962137" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.31403118" />
+      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.41870824" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -869,16 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lstm-scratch/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#437#451#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rnn-gluon/data">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -888,10 +868,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rnn-gluon/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="363">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="41" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm-scratch/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#437#451#0" expanded="true" />
           </folding>
         </state>
       </provider>

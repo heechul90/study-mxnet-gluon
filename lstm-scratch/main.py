@@ -18,7 +18,7 @@ from mxnet import nd
 import utils
 ctx = utils.try_gpu()
 
-with zipfile.ZipFile('data/jaychou_lyrics.txt.zip', 'r') as zin:
+with zipfile.ZipFile('./rnn-scratch/data/jaychou_lyrics.txt.zip', 'r') as zin:
     zin.extractall('data/')
 
 with open('data/jaychou_lyrics.txt') as f:
