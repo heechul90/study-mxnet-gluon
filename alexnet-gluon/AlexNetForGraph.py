@@ -5,6 +5,7 @@ from mxnet.gluon import nn
 from mxnet import init
 from mxnet import gluon
 import utils
+import mxnet as mx
 
 
 ctx = utils.try_gpu()
@@ -31,10 +32,9 @@ with net.name_scope():
         nn.Dense(4096, activation="relu"),
         nn.Dropout(.5),
         # 第六阶段
-        nn.Dense(10))
+        nn.Dense(1))
 
-train_data, test_data = utils.load_data_fashion_mnist(
-    batch_size=64, resize=224)
+train_data, test_data = utils.load_data_fashion_mnist(batch_size=64, resize=224)
 
 net.initialize(ctx=ctx, init=init.Xavier())
 
@@ -43,6 +43,6 @@ import gluoncv
 gluoncv.utils.viz.plot_network(net)
 #####################################
 
-loss = gluon.loss.SoftmaxCrossEntropyLoss()
+loss = gluon.loss.SigmoidBinaryCrossEntropyLoss()
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
 utils.train(train_data, test_data, net, loss, trainer, ctx, num_epochs=1)
